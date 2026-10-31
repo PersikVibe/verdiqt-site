@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<base href="/">
+<title>Hard Mode · Verdiqt</title>
+<meta name="description" content="My call for The Game Awards 2026 is sealed. Can you beat it?">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Verdiqt">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Hard Mode · Verdiqt">
+<meta property="og:description" content="My call for The Game Awards 2026 is sealed. Can you beat it?">
+<meta property="og:image" content="https://verdiqt.app/og/arson-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hard Mode · Verdiqt">
+<meta name="twitter:description" content="My call for The Game Awards 2026 is sealed. Can you beat it?">
+<meta name="twitter:image" content="https://verdiqt.app/og/arson-en.jpg">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="theme-color" content="#FFE39A">
+<link rel="icon" type="image/svg+xml" href="./logo/verdiqt-q.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="./logo/verdiqt-q-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./logo/verdiqt-q-180.png">
+<!-- Превью ссылки. Картинки public/og собирает scripts/og/build.mjs; для страниц-вызовов /s/<титул> свои теги ставит scripts/og/pages.mjs. -->
+<!-- Шрифты лежат у нас (public/fonts, пересборка: node scripts/fonts.mjs): без обращения к Google и без круга «CSS → файл».
+     Холсты карт ждут эти четыре файла до первого экрана (assets.ts, fonts()), поэтому они в preload; остальные подмножества
+     (latin-ext, cyrillic-ext, Cormorant для RPG) браузер возьмёт сам по unicode-range. -->
+<link rel="preload" href="./fonts/roboto-flex-v30-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/roboto-flex-v30-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/shantell-sans-v13-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/shantell-sans-v13-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/unbounded-v12-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/onest-v11-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./fonts/fonts.css">
+<!-- Экран загрузки старта (30.10, loader4.ts): чёрный с первого кадра, свой вход раньше основного кода.
+     Тёмная подложка старта (24.10): тёмный фон с первой отрисовки, ещё до стилей и скриптов игры, иначе мелькал белый экран.
+     Те же условия, что в main4.ts: старт «Пульт», подложка не светлая, черновик пустой. -->
+<script>try{var p=JSON.parse(localStorage.getItem('ga.v4.prefs')||'{}'),d=JSON.parse(localStorage.getItem('ga.v4.draft')||'{}');if(p.startTone&&p.startTone!=='light'&&(p.start||'pult')==='pult'&&!Object.keys(d.picks||{}).length&&!Object.keys(d.skipped||{}).length)document.documentElement.classList.add('st-dark');if(p.loader!=='off'&&!/ld=off/.test(location.hash)&&(!navigator.webdriver||/ld=on/.test(location.hash))&&(p.start||'pult')==='pult'&&!Object.keys(d.picks||{}).length&&!Object.keys(d.skipped||{}).length)document.documentElement.classList.add('ld4')}catch(e){}</script>
+<style>
+html.st-dark, html.st-dark body, html.ld4, html.ld4 body { background: #050506; }
+/* Заглушка без WebGL и для старых браузеров: показывается инлайн-скриптом ниже до загрузки основного кода. */
+#nogl { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 16px; background: #EAE9ED; font-family: 'Roboto Flex', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; }
+#nogl[hidden] { display: none; }
+#nogl div { width: min(420px, 100%); display: grid; gap: 10px; padding: 20px 18px 18px; border-radius: 6px; background: #fff; color: #14131A; box-shadow: 0 0 0 2px #14131A, 5px 5px 0 #FF5A1F; }
+#nogl h1 { margin: 0; font-size: 22px; font-weight: 900; line-height: 1.05; text-transform: uppercase; }
+#nogl p { margin: 0; font-size: 15px; font-weight: 600; line-height: 1.4; color: #3A3940; }
+#nogl p[lang=en] { color: #6B6A72; font-size: 14px; }
+#nogl code { display: block; margin-top: 4px; padding: 10px 12px; border-radius: 6px; background: #F1F0F4; font: 600 13px/1.3 ui-monospace, Menlo, Consolas, monospace; word-break: break-all; -webkit-user-select: all; user-select: all; }
+</style>
+  <script type="module" crossorigin src="./assets/v4-SKDplFOH.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/three-rCrYZDxC.js">
+  <link rel="stylesheet" crossorigin href="./assets/v4-CjB-RWim.css">
+  <link rel="preconnect" href="https://oomdnatdmdknuebyefdo.supabase.co" crossorigin>
+  <link rel="modulepreload" href="./assets/startpult-B1CcpM_E.js" crossorigin>
+  <link rel="modulepreload" href="./assets/pult3d-DhpW8o4y.js" crossorigin>
+  <link rel="preload" as="fetch" href="./pult/pult.json" crossorigin>
+  <link rel="preload" as="fetch" href="./pult/pult3d.json" crossorigin>
+  <link rel="preload" as="fetch" href="./pult/pult.glb" crossorigin fetchpriority="low">
+  <link rel="preload" as="fetch" href="./draco/draco_wasm_wrapper.js" crossorigin fetchpriority="low">
+  <link rel="preload" as="fetch" href="./draco/draco_decoder.wasm" crossorigin fetchpriority="low">
+  <link rel="preload" as="image" href="./pult/pult_off.webp" fetchpriority="high">
+</head>
+<body>
+<div id="app"></div>
+<div id="nogl" hidden role="alert">
+  <div>
+    <h1>Этот браузер не тянет 3D</h1>
+    <p>Колода рисуется через WebGL, а здесь он выключен или браузер устарел. Чаще всего так бывает во встроенном браузере Telegram или LinkedIn: открой ссылку в Chrome или Safari.</p>
+    <p lang="en">The deck needs WebGL, and it is off here or the browser is too old. This usually happens in the Telegram or LinkedIn in-app browser: open the link in Chrome or Safari.</p>
+    <code id="nogl-url"></code>
+  </div>
+</div>
+<noscript><div id="nogl"><div><h1>Нужен JavaScript</h1><p>Игра не запускается без JavaScript. Включи его или открой ссылку в Chrome или Safari.</p><p lang="en">The game needs JavaScript. Turn it on or open the link in Chrome or Safari.</p></div></div></noscript>
+<script>
+// До загрузки основного кода (около 300 КБ): есть ли WebGL и понимает ли браузер современный синтаксис.
+// Нет: сразу честная заглушка вместо пустой страницы. Основной код потом покажет свой экран сбоя поверх.
+(function () {
+  var ok = false;
+  try {
+    var c = document.createElement('canvas');
+    var g = c.getContext('webgl2') || c.getContext('webgl');
+    if (g) { ok = true; var x = g.getExtension('WEBGL_lose_context'); if (x) x.loseContext(); }
+  } catch (e) {}
+  if (ok) { try { new Function('class A { static #p = 1; static {} } let a = null; a ??= 1; return [1].at(-1)'); } catch (e) { ok = false; } }
+  if (ok) return;
+  var el = document.getElementById('nogl');
+  el.hidden = false;
+  document.getElementById('nogl-url').textContent = location.href;
+})();
+</script>
+<script nomodule>document.getElementById('nogl').hidden = false; document.getElementById('nogl-url').textContent = location.href;</script>
+</body>
+</html>

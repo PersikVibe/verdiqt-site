@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ECEBF0">
+<meta name="robots" content="noindex">
+<title>Verdiqt · правила и политика</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%23EE6A1A%27/%3E%3Cpath d=%27M9 17l5 5 9-12%27 fill=%27none%27 stroke=%27%23fff%27 stroke-width=%274%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+  /* страница правил: та же светлая студия, что и игра; одна колонка, два языка переключаются ссылкой */
+  :root { --bg: #ECEBF0; --ink: #14131A; --mute: #5E5C66; --acc: #FF5A1F; --paper: #fff; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  /* 26.10 (раунд 12): шрифты игры: заголовки Tektur (акцентный шрифт табло), текст Onest */
+  body { background: var(--bg); color: var(--ink); font-family: 'Onest', 'Roboto Flex', system-ui, sans-serif; font-size: 17px; line-height: 1.55;
+    padding: 28px max(16px, env(safe-area-inset-left, 0px)) 80px max(16px, env(safe-area-inset-right, 0px)); }
+  .wrap { max-width: 720px; margin: 0 auto; display: grid; gap: 28px; }
+  .top { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; font-family: 'Tektur', 'Onest', sans-serif; font-weight: 800; font-size: 19px; text-decoration: none; color: var(--ink); }
+  .brand i { width: 26px; height: 26px; border-radius: 7px; background: var(--acc); display: grid; place-items: center; }
+  .brand i svg { width: 16px; height: 16px; }
+  .lang { display: inline-flex; gap: 4px; padding: 3px; border-radius: 8px; background: var(--paper); box-shadow: 0 0 0 1.5px rgba(20,19,26,.18); }
+  .lang a { padding: 6px 12px; border-radius: 6px; text-decoration: none; color: var(--ink); font-size: 13px; font-weight: 800; }
+  .lang a[aria-current] { background: var(--ink); color: #fff; }
+  h1 { margin: 0; font-family: 'Tektur', 'Onest', sans-serif; font-size: clamp(36px, 7vw, 60px); font-weight: 800; line-height: .95; letter-spacing: 0; }
+  h2 { margin: 0 0 10px; font-family: 'Tektur', 'Onest', sans-serif; font-size: 21px; font-weight: 700; letter-spacing: 0; }
+  li::marker { color: var(--acc); }
+  p, li { margin: 0; color: var(--ink); }
+  .box { display: grid; gap: 10px; padding: 20px 22px; background: var(--paper); border-radius: 8px; box-shadow: 0 0 0 2px var(--ink), 6px 6px 0 var(--acc); }
+  .box.quiet { box-shadow: 0 0 0 1.5px rgba(20,19,26,.18); }
+  ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+  .mute { color: var(--mute); font-size: 14.5px; }
+  .mail { font-weight: 800; }
+  [data-l] { display: none; }
+  html[data-lang="ru"] [data-l="ru"], html[data-lang="en"] [data-l="en"] { display: block; }
+  .upd { font-size: 13px; color: var(--mute); }
+</style>
+  <link rel="preconnect" href="https://oomdnatdmdknuebyefdo.supabase.co" crossorigin>
+  <link rel="modulepreload" href="./assets/startpult-B1CcpM_E.js" crossorigin>
+  <link rel="modulepreload" href="./assets/pult3d-DhpW8o4y.js" crossorigin>
+  <link rel="preload" as="fetch" href="./pult/pult.json" crossorigin>
+  <link rel="preload" as="fetch" href="./pult/pult3d.json" crossorigin>
+  <link rel="preload" as="fetch" href="./pult/pult.glb" crossorigin fetchpriority="low">
+  <link rel="preload" as="fetch" href="./draco/draco_wasm_wrapper.js" crossorigin fetchpriority="low">
+  <link rel="preload" as="fetch" href="./draco/draco_decoder.wasm" crossorigin fetchpriority="low">
+  <link rel="preload" as="image" href="./pult/pult_off.webp" fetchpriority="high">
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="brand" href="./"><i><svg viewBox="0 0 32 32" fill="none"><path d="M9 17l5 5 9-12" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Verdiqt</a>
+    <nav class="lang" aria-label="Язык"><a href="?lang=ru" id="l-ru">RU</a><a href="?lang=en" id="l-en">EN</a></nav>
+  </div>
+
+  <div data-l="ru">
+    <div class="wrap">
+      <h1>Правила и политика</h1>
+
+      <section class="box">
+        <h2>Что это</h2>
+        <p>Verdiqt независимый проект. Не связан с The Game Awards, Ola Balola LLC, Джеффом Кили и другими организаторами премий, не спонсируется и не одобрен ими. Названия премий принадлежат их правообладателям и используются только для обозначения событий, на которые делается прогноз. Логотипы, статуэтки и официальные материалы не используются. Обложки игр принадлежат издателям и взяты из официальных источников (магазины, пресс-материалы).</p>
+        <p>Это бесплатная игра-прогноз: ставки и платежи не принимаются, призов нет. 16+.</p>
+      </section>
+
+      <section class="box quiet">
+        <h2>Правила</h2>
+        <ul>
+          <li>Игра бесплатная и без регистрации. Прогноз сохраняется в браузере, а с первого выбора и на сервере, чтобы работали ссылка-вызов и сравнение с остальными.</li>
+          <li>Карточка с именем, титулом, выбором и росчерком видна всем, у кого есть твоя ссылка-вызов, и попадает в превью этой ссылки в мессенджерах. Не пиши на карточке настоящее имя, если не хочешь, чтобы его видели.</li>
+          <li>Имя на карточке придумываешь сам. Чужие имена, оскорбления, ссылки и рекламу убираем без объяснений, такую карточку можем удалить.</li>
+          <li>Ранний прогноз можно менять до объявления номинантов (по плану 16 ноября 2026; если The Game Awards назовёт другой день, заморозка сдвинется за час до него). После объявления игра открывается снова на официальных номинантах: ранние попадания остаются с бонусом, промахи можно перевыбрать до начала шоу 10 декабря. Итоги подводятся в день номинантов и в ночь шоу.</li>
+          <li>Шансы и оценки Verdiqt это часть игры, а не совет для ставок.</li>
+        </ul>
+      </section>
+
+      <section class="box quiet">
+        <h2>Какие данные и зачем</h2>
+        <ul>
+          <li><b>Прогноз и анонимный ключ</b> браузера: чтобы игра работала, карточка открывалась по ссылке и сравнивалась с остальными. Аккаунта, настоящего имени и телефона не спрашиваем.</li>
+          <li><b>Имя на карточке и росчерк</b>: только твой текст и твой рисунок.</li>
+          <li><b>Почта</b>, только если её оставили: два письма, в день номинантов и в ночь шоу. Никаких рассылок. Отписаться можно ссылкой в письме или письмом нам.</li>
+          <li><b>Счётчики пути</b> (открыл, начал, выбрал, запечатал, поделился), <b>страна</b> двумя буквами и <b>сайт, с которого пришёл</b> (только домен, без адреса страницы): чтобы понимать, где игра не открывается и что улучшить. Без сторонней аналитики и рекламных трекеров.</li>
+          <li><b>IP-адрес</b> в данных игры не храним в открытом виде: для защиты от спама и лимитов берём его хеш. Сервис входа Supabase хранит адрес и тип браузера к анонимному ключу, пока эта сессия жива; журнал входов чистим через 30 дней. Площадки держат адрес в технических логах по своим правилам, обычно до 30 дней.</li>
+        </ul>
+        <p class="mute">В браузере хранятся только прогресс игры, анонимный ключ и настройки (localStorage). Cookie и рекламных идентификаторов нет.</p>
+      </section>
+
+      <section class="box quiet">
+        <h2>Где хранится и сколько</h2>
+        <ul>
+          <li>Сервер игры: Supabase, регион Франкфурт (ЕС). Сайт: GitHub Pages. Запасной путь к серверу для тех, у кого прямой не работает: Vercel (США), содержимое запросов там не хранится. Письма отправляет сервис рассылки Resend.</li>
+          <li>Эти сервисы видят данные только для того, чтобы игра работала и письма доходили. Больше никому не передаём, не продаём и не используем для рекламы.</li>
+          <li>Почту удаляем после декабрьского письма, не позже 31 декабря 2026. Прогнозы и карточки храним до конца 2027 года, чтобы ссылки-вызовы работали и после шоу. Счётчики пути не дольше 13 месяцев.</li>
+        </ul>
+      </section>
+
+      <section class="box quiet">
+        <h2>Твои права и контакт</h2>
+        <p>Можно узнать, что о тебе хранится, исправить или удалить карточку, прогноз и почту, отписаться от писем: напиши на <span class="mail" data-mail></span>, по возможности с номером карточки. Отвечаем и удаляем в течение 7 дней. Если ты в ЕС, можно пожаловаться в надзорный орган по защите данных своей страны.</p>
+        <p>Пожаловаться на имя или снять обложку по запросу правообладателя: та же почта. Обложка заменяется заглушкой в течение 3 дней, превью пересобирается.</p>
+        <p class="mute">Проект ведёт Владимир Клюйко (частное лицо), он же отвечает за данные. Игра для 16+: если тебе меньше 16, не оставляй почту.</p>
+      </section>
+
+      <section class="box quiet">
+        <h2>Что внутри</h2>
+        <p>Код, графика, 3D-модели и тексты сделаны для проекта, все права защищены. Сторонние библиотеки, шрифты и звуки работают по своим открытым лицензиям, полный список с авторами: <a href="third-party.txt">third-party.txt</a>.</p>
+      </section>
+
+      <p class="upd">Обновлено 30 октября 2026.<br>© 2026 Verdiqt. Не связан с The Game Awards.</p>
+    </div>
+  </div>
+
+  <div data-l="en">
+    <div class="wrap">
+      <h1>Rules and privacy</h1>
+
+      <section class="box">
+        <h2>What this is</h2>
+        <p>Verdiqt is an independent project. It is not affiliated with, sponsored by, or endorsed by The Game Awards, Ola Balola LLC, Geoff Keighley, or any awards organization. Award names belong to their owners and are used only to identify the events being predicted. No logos, trophies, or official materials are used. Game covers belong to their publishers and come from official sources (stores, press kits).</p>
+        <p>This is a free prediction game: no bets or payments are accepted, there are no prizes. 16+.</p>
+      </section>
+
+      <section class="box quiet">
+        <h2>Rules</h2>
+        <ul>
+          <li>Free, no sign-up. Your prediction is stored in the browser and, from your first pick, on the server so the challenge link and the crowd comparison work.</li>
+          <li>Your card with its name, title, picks and signature is visible to anyone who has your challenge link, and it shows in that link's preview in messengers. Do not put your real name on the card if you do not want it seen.</li>
+          <li>You choose the name on the card. Other people's names, slurs, links and ads are removed without notice, and such a card may be deleted.</li>
+          <li>You can change your early prediction until the nominees are announced (planned for November 16, 2026; if The Game Awards picks another day, the freeze moves to one hour before it). After the announcement the game opens again on the official nominees: early hits stay with a bonus, misses can be swapped until the show starts on December 10. Results are counted on nominees day and on show night.</li>
+          <li>Verdiqt odds and ratings are part of the game, not betting advice.</li>
+        </ul>
+      </section>
+
+      <section class="box quiet">
+        <h2>What we store and why</h2>
+        <ul>
+          <li><b>Your prediction and an anonymous browser key</b>: so the game works, your card opens by link and compares with the crowd. We do not ask for an account, your real name or a phone number.</li>
+          <li><b>The name on the card and the signature</b>: only your text and your drawing.</li>
+          <li><b>Email</b>, only if you left it: two emails, on nominees day and on show night. No newsletters. Unsubscribe with the link in the email or by writing to us.</li>
+          <li><b>Funnel counters</b> (opened, started, picked, sealed, shared), your <b>country</b> as two letters and the <b>site you came from</b> (domain only, no page address): to see where the game does not load and what to improve. No third-party analytics, no ad trackers.</li>
+          <li><b>IP address</b> is not stored in plain form in the game data: we use a hash of it for spam protection and rate limits. The Supabase sign-in service keeps the address and browser type with the anonymous key while that session is active; the sign-in log is cleared after 30 days. Hosting providers keep the address in technical logs under their own rules, usually up to 30 days.</li>
+        </ul>
+        <p class="mute">Your browser stores only game progress, the anonymous key and settings (localStorage). No cookies, no advertising ids.</p>
+      </section>
+
+      <section class="box quiet">
+        <h2>Where it lives and for how long</h2>
+        <ul>
+          <li>Game server: Supabase, Frankfurt region (EU). Website: GitHub Pages. Backup route to the server for people whose direct route fails: Vercel (US), request content is not stored there. Emails are sent by the Resend email service.</li>
+          <li>These services see data only so the game works and emails arrive. We do not share it with anyone else, sell it or use it for ads.</li>
+          <li>Emails are deleted after the December email, by December 31, 2026. Predictions and cards are kept until the end of 2027 so challenge links keep working after the show. Funnel counters are kept for up to 13 months.</li>
+        </ul>
+      </section>
+
+      <section class="box quiet">
+        <h2>Your rights and contact</h2>
+        <p>You can ask what we store about you, correct or delete your card, prediction and email, or unsubscribe: write to <span class="mail" data-mail></span>, ideally with your card number. We reply and delete within 7 days. If you are in the EU, you can also complain to your national data protection authority.</p>
+        <p>Report a name or request a cover takedown as the rights holder: same address. The cover is replaced with a placeholder within 3 days and the preview is rebuilt.</p>
+        <p class="mute">The project is run by Vladimir Kluiko (private individual), who is also responsible for the data. The game is for ages 16+: if you are under 16, do not leave your email.</p>
+      </section>
+
+      <section class="box quiet">
+        <h2>What is inside</h2>
+        <p>Code, graphics, 3D models and copy were made for the project, all rights reserved. Third-party libraries, fonts and sounds are used under their open licenses, the full list with authors: <a href="third-party.txt">third-party.txt</a>.</p>
+      </section>
+
+      <p class="upd">Updated October 30, 2026.<br>© 2026 Verdiqt. Not affiliated with The Game Awards.</p>
+    </div>
+  </div>
+</div>
+<script>
+  // язык из ?lang=, иначе из браузера; почта проекта одной строкой, чтобы менять в одном месте
+  (function () {
+    var q = new URLSearchParams(location.search).get('lang');
+    var en = q ? q === 'en' : !/^ru/i.test(navigator.language || '');
+    var l = en ? 'en' : 'ru';
+    document.documentElement.setAttribute('data-lang', l);
+    document.documentElement.lang = l;
+    document.title = en ? 'Verdiqt · rules and privacy' : 'Verdiqt · правила и политика';
+    document.getElementById('l-' + l).setAttribute('aria-current', 'page');
+    var MAIL = 'hello@verdiqt.app'; /* почта проекта (пересылка Porkbun), меняется здесь */
+    document.querySelectorAll('[data-mail]').forEach(function (el) {
+      var a = document.createElement('a'); a.href = 'mailto:' + MAIL; a.textContent = MAIL; el.appendChild(a);
+    });
+  })();
+</script>
+</body>
+</html>

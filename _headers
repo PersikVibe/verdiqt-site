@@ -1,0 +1,32 @@
+# Cloudflare Pages: заголовки ответа.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/covers/*
+  Cache-Control: public, max-age=604800
+
+# шрифты: имя файла с версией семейства (scripts/fonts.mjs), новая версия приходит новым именем
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# предмет старта, декодер Draco и звук: имена без хеша, поэтому неделя кэша и тихое обновление в фоне
+/start/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
+
+/draco/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=2592000
+
+/audio/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
+
+/data/*
+  Cache-Control: public, max-age=300
+
+# картинки превью ссылок: мессенджеры тянут их по одному разу на ссылку, сутки кэша хватает
+/og/*
+  Cache-Control: public, max-age=86400
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()

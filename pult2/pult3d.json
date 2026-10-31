@@ -1,0 +1,185 @@
+{
+ "units": "метры, оси glTF (Y вверх); лицо пульта смотрит в +Z узла pult, нажатие = -Z",
+ "camera": {
+  "position": [
+   0.0,
+   0.035,
+   0.3
+  ],
+  "target": [
+   0.0,
+   -0.004,
+   -0.0
+  ],
+  "lens_mm": 60.0,
+  "sensor_height_mm": 36.0,
+  "fov_v_deg": 33.3985,
+  "render": [
+   1600,
+   2000
+  ]
+ },
+ "lights": [
+  {
+   "name": "key",
+   "position": [
+    -0.36,
+    0.4,
+    0.26
+   ],
+   "direction": [
+    0.602347,
+    -0.669274,
+    -0.435028
+   ],
+   "energy_w": 12.0,
+   "size": 0.22,
+   "color": "#fffcf8",
+   "shadow": true
+  },
+  {
+   "name": "fill",
+   "position": [
+    0.4,
+    0.05,
+    0.3
+   ],
+   "direction": [
+    -0.79603,
+    -0.099504,
+    -0.597022
+   ],
+   "energy_w": 1.1,
+   "size": 0.6,
+   "color": "#f3f6ff",
+   "shadow": false
+  },
+  {
+   "name": "rim",
+   "position": [
+    0.25,
+    0.3,
+    -0.35
+   ],
+   "direction": [
+    -0.476731,
+    -0.572077,
+    0.667424
+   ],
+   "energy_w": 6.0,
+   "size": 0.2,
+   "color": "#fffaf6",
+   "shadow": false
+  },
+  {
+   "name": "top",
+   "position": [
+    0.0,
+    0.45,
+    -0.05
+   ],
+   "direction": [
+    -0.0,
+    -0.993884,
+    0.110431
+   ],
+   "energy_w": 1.8,
+   "size": 0.3,
+   "color": "#ffffff",
+   "shadow": true
+  }
+ ],
+ "world": {
+  "color": "#dcdbe3",
+  "strength": 0.2
+ },
+ "view": {
+  "transform": "AgX",
+  "look": "AgX - Medium High Contrast",
+  "exposure": -0.550000011920929
+ },
+ "rig_euler_xyz_deg_blender": [
+  -24.0,
+  -6.0,
+  26.0
+ ],
+ "buttons": {
+  "main": [
+   "main_cap",
+   "smile"
+  ],
+  "modes": [
+   [
+    "m0",
+    "m0_dot"
+   ],
+   [
+    "m1",
+    "m1_dot"
+   ],
+   [
+    "m2",
+    "m2_dot"
+   ],
+   [
+    "m3",
+    "m3_dot"
+   ]
+  ],
+  "travel_m": {
+   "main": 0.0026,
+   "mode": 0.0012
+  }
+ },
+ "centers": {
+  "main_cap": [
+   0.0212,
+   -0.03,
+   0.01235
+  ],
+  "m0": [
+   -0.0222,
+   -0.0226,
+   0.00815
+  ],
+  "m1": [
+   -0.0158,
+   -0.029,
+   0.00815
+  ],
+  "m2": [
+   -0.0222,
+   -0.0354,
+   0.00815
+  ],
+  "m3": [
+   -0.0286,
+   -0.029,
+   0.00815
+  ],
+  "led": [
+   0.0,
+   0.0,
+   -0.0
+  ]
+ },
+ "led": {
+  "object": "led",
+  "grid": [
+   60,
+   38
+  ],
+  "note": "в three.js материал led получает живой CanvasTexture экрана"
+ },
+ "hang": {
+  "node": "hang",
+  "pivot_local": [
+   -0.0262,
+   -0.0543,
+   -0.0
+  ],
+  "note": "маятник на пружине вокруг точки в ушке, по умолчанию висит строго вниз"
+ },
+ "mats": 2,
+ "mats_note": "материалы v2 (30.10): extras.env у материала = сила студийного отражения (софтбоксы и градиент) на сайте"
+}

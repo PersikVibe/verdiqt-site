@@ -1,0 +1,17 @@
+{
+  "event": "tga-2026",
+  "status": "pending",
+  "nomineesAt": null,
+  "winnersAt": null,
+  "categories": {
+    "action": { "nominees": [], "winner": null },
+    "adventure": { "nominees": [], "winner": null },
+    "indie": { "nominees": [], "winner": null },
+    "rpg": { "nominees": [], "winner": null },
+    "score": { "nominees": [], "winner": null },
+    "goty": { "nominees": [], "winner": null }
+  },
+  "nominees": [],
+  "goldenJoystickWinner": null,
+  "_about": "Итоги The Game Awards 2026 для развязки. 17.11: вписать номинантов каждой номинации в nominees (id из data/contenders-2026.json, для игр вне пула просто название), поставить status: nominees и nomineesAt. 10.12: вписать winner по мере объявления и поставить status: winners. Необязательный блок crowd: { nominees: { hits: [n0..n6] }, winners: { hits: [n0..n6] } } с распределением попаданий по всем прогнозам (считается SQL-запросом раз после заморозки), даёт строку «точнее N% прогнозов». Пример заполнения: results-early-2026.sample.json."
+}

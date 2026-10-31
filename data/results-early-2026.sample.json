@@ -1,0 +1,21 @@
+{
+  "event": "tga-2026",
+  "status": "winners",
+  "nomineesAt": "2026-11-17T16:00:00Z",
+  "winnersAt": "2026-12-11T03:00:00Z",
+  "categories": {
+    "action": { "nominees": ["phantom-blade-zero", "gears-e-day", "007-first-light", "saros", "nioh-3"], "winner": "phantom-blade-zero" },
+    "adventure": { "nominees": ["Resident Evil Requiem", "silent-hill-townfall", "control-resonant", "pragmata", "metroid-prime-4"], "winner": "re-requiem" },
+    "indie": { "nominees": ["mixtape", "big-walk", "mina", "Fictional Game (outside the pool)", "esoteric-ebb"], "winner": "mina" },
+    "rpg": { "nominees": ["crimson-desert", "dawnwalker", "trails-sky-2", "fe-fortunes-weave", "dq7-reimagined"], "winner": "crimson-desert" },
+    "score": { "nominees": ["mixtape", "saros", "control-resonant", "pragmata", "big-walk"], "winner": "mixtape" },
+    "goty": { "nominees": ["gta6", "re-requiem", "control-resonant", "phantom-blade-zero", "mina", "pokopia"], "winner": "re-requiem" }
+  },
+  "crowd": {
+    "nominees": { "hits": [12, 40, 95, 130, 88, 30, 5], "total": 400 },
+    "winners": { "hits": [120, 150, 80, 35, 12, 3, 0], "total": 400 }
+  },
+  "nominees": ["gta6", "re-requiem", "control-resonant", "phantom-blade-zero", "mina", "pokopia"],
+  "goldenJoystickWinner": "re-requiem",
+  "_about": "Выдуманный пример для проверки развязки, не настоящие номинанты и победители. Открывается по ссылке v4.html?results=sample (этап победителей) и v4.html?results=sample&stage=nominees (этап номинантов). Записи в nominees и winner: id игры из data/contenders-2026.json или название, если игры в пуле нет (Resident Evil Requiem подставится как re-requiem, Fictional Game сравнится по названию со своими играми вне списка). Блок crowd необязателен: гистограмма попаданий по всем прогнозам, индекс = сколько из 6 попало. Поля nominees и goldenJoystickWinner остались от раннего прототипа."
+}
