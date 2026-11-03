@@ -6,7 +6,9 @@
 <meta name="theme-color" content="#ECEBF0">
 <meta name="robots" content="noindex">
 <title>Verdiqt · правила и политика</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%23EE6A1A%27/%3E%3Cpath d=%27M9 17l5 5 9-12%27 fill=%27none%27 stroke=%27%23fff%27 stroke-width=%274%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="./logo/verdiqt-q.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="./logo/verdiqt-q-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./logo/verdiqt-q-180.png">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
   /* страница правил: та же светлая студия, что и игра; одна колонка, два языка переключаются ссылкой */
@@ -19,8 +21,7 @@
   .wrap { max-width: 720px; margin: 0 auto; display: grid; gap: 28px; }
   .top { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
   .brand { display: inline-flex; align-items: center; gap: 10px; font-family: 'Tektur', 'Onest', sans-serif; font-weight: 800; font-size: 19px; text-decoration: none; color: var(--ink); }
-  .brand i { width: 26px; height: 26px; border-radius: 7px; background: var(--acc); display: grid; place-items: center; }
-  .brand i svg { width: 16px; height: 16px; }
+  .brand img { display: block; height: 33px; width: auto; }
   .lang { display: inline-flex; gap: 4px; padding: 3px; border-radius: 8px; background: var(--paper); box-shadow: 0 0 0 1.5px rgba(20,19,26,.18); }
   .lang a { padding: 6px 12px; border-radius: 6px; text-decoration: none; color: var(--ink); font-size: 13px; font-weight: 800; }
   .lang a[aria-current] { background: var(--ink); color: #fff; }
@@ -38,8 +39,8 @@
   .upd { font-size: 13px; color: var(--mute); }
 </style>
   <link rel="preconnect" href="https://oomdnatdmdknuebyefdo.supabase.co" crossorigin>
-  <link rel="modulepreload" href="./assets/startpult-BUgCbGce.js" crossorigin>
-  <link rel="modulepreload" href="./assets/pult3d-CKo_jnxZ.js" crossorigin>
+  <link rel="modulepreload" href="./assets/startpult-BUPQG_l8.js" crossorigin>
+  <link rel="modulepreload" href="./assets/pult3d-D7FH7_DJ.js" crossorigin>
   <link rel="preload" as="fetch" href="./pult/pult.json" crossorigin>
   <link rel="preload" as="fetch" href="./pult/pult3d.json" crossorigin>
   <link rel="preload" as="fetch" href="./pult/pult.glb" crossorigin fetchpriority="low">
@@ -50,7 +51,7 @@
 <body>
 <div class="wrap">
   <div class="top">
-    <a class="brand" href="./"><i><svg viewBox="0 0 32 32" fill="none"><path d="M9 17l5 5 9-12" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Verdiqt</a>
+    <a class="brand" href="./" aria-label="Verdiqt"><img src="./logo/verdiqt-dark.svg" alt="Verdiqt" width="128" height="33"></a>
     <nav class="lang" aria-label="Язык"><a href="?lang=ru" id="l-ru">RU</a><a href="?lang=en" id="l-en">EN</a></nav>
   </div>
 
