@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="ru">
 <head>
+  <script>(function(){var e=false;try{var h=location.hash.slice(1),p=JSON.parse(localStorage.getItem('ga.v4.prefs')||'{}').lang,l=navigator.languages||[navigator.language];e=h==='en'||(h!=='ru'&&(p==='en'||(p!=='ru'&&l.length>0&&!l.some(function(x){return /^(ru|be|uk|kk)([-_]|$)/i.test(String(x))}))))}catch(_){}var s=e?'_en':'';[['pult/pult_off'+s+'.webp','image','high',0],['pult2/pult'+s+'.glb','fetch','low',1]].forEach(function(f){var n=document.createElement('link');n.rel='preload';n.href='/'+f[0];n.as=f[1];n.setAttribute('fetchpriority',f[2]);if(f[3])n.crossOrigin='anonymous';document.head.appendChild(n)})})()</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#ECEBF0">
@@ -39,14 +41,13 @@
   .upd { font-size: 13px; color: var(--mute); }
 </style>
   <link rel="preconnect" href="https://oomdnatdmdknuebyefdo.supabase.co" crossorigin>
-  <link rel="modulepreload" href="./assets/startpult-yDW178Zy.js" crossorigin>
-  <link rel="modulepreload" href="./assets/pult3d-B0vDQetb.js" crossorigin>
+  <link rel="modulepreload" href="./assets/startpult-B7n8GzL4.js" crossorigin>
+  <link rel="modulepreload" href="./assets/pult3d-ChvMz57R.js" crossorigin>
+  <link rel="modulepreload" href="./assets/RectAreaLightUniformsLib-CttvAlPm.js" crossorigin>
   <link rel="preload" as="fetch" href="./pult/pult.json" crossorigin>
-  <link rel="preload" as="fetch" href="./pult/pult3d.json" crossorigin>
-  <link rel="preload" as="fetch" href="./pult/pult.glb" crossorigin fetchpriority="low">
+  <link rel="preload" as="fetch" href="./pult2/pult3d.json" crossorigin>
   <link rel="preload" as="fetch" href="./draco/draco_wasm_wrapper.js" crossorigin fetchpriority="low">
   <link rel="preload" as="fetch" href="./draco/draco_decoder.wasm" crossorigin fetchpriority="low">
-  <link rel="preload" as="image" href="./pult/pult_off.webp" fetchpriority="high">
 </head>
 <body>
 <div class="wrap">
@@ -71,7 +72,7 @@
           <li>Игра бесплатная и без регистрации. Прогноз сохраняется в браузере, а с первого выбора и на сервере, чтобы работали ссылка-вызов и сравнение с остальными.</li>
           <li>Карточка с именем, титулом, выбором и росчерком видна всем, у кого есть твоя ссылка-вызов, и попадает в превью этой ссылки в мессенджерах. Не пиши на карточке настоящее имя, если не хочешь, чтобы его видели.</li>
           <li>Имя на карточке придумываешь сам. Чужие имена, оскорбления, ссылки и рекламу убираем без объяснений, такую карточку можем удалить.</li>
-          <li>Ранний прогноз можно менять до объявления номинантов (по плану 16 ноября 2026; если The Game Awards назовёт другой день, заморозка сдвинется за час до него). После объявления игра открывается снова на официальных номинантах: ранние попадания остаются с бонусом, промахи можно перевыбрать до начала шоу 10 декабря. Итоги подводятся в день номинантов и в ночь шоу.</li>
+          <li>Ранний прогноз можно менять до объявления номинантов (по плану 16 ноября 2026; если The Game Awards назовёт другой день, заморозка сдвинется за час до него). После объявления игра открывается снова на официальных номинантах: ранние попадания остаются с бонусом, промахи можно перевыбрать до начала шоу 10 декабря. Совпавшую ставку тоже можно сменить, но её бонус тогда сгорит. Итоги подводятся в день номинантов и в ночь шоу.</li>
           <li>Шансы и оценки Verdiqt это часть игры, а не совет для ставок.</li>
         </ul>
       </section>
@@ -82,6 +83,7 @@
           <li><b>Прогноз и анонимный ключ</b> браузера: чтобы игра работала, карточка открывалась по ссылке и сравнивалась с остальными. Аккаунта, настоящего имени и телефона не спрашиваем.</li>
           <li><b>Имя на карточке и росчерк</b>: только твой текст и твой рисунок.</li>
           <li><b>Почта</b>, только если её оставили: два письма, в день номинантов и в ночь шоу. Никаких рассылок. Отписаться можно ссылкой в письме или письмом нам.</li>
+          <li><b>Отзыв</b>, только если его оставили: реакция на игру или текст о поломке, к тексту прикрепляются браузер и размер окна. Храним не дольше 13 месяцев. Личное туда лучше не писать.</li>
           <li><b>Счётчики пути</b> (открыл, начал, выбрал, запечатал, поделился), <b>страна</b> двумя буквами и <b>сайт, с которого пришёл</b> (только домен, без адреса страницы): чтобы понимать, где игра не открывается и что улучшить. Без сторонней аналитики и рекламных трекеров.</li>
           <li><b>IP-адрес</b> в данных игры не храним в открытом виде: для защиты от спама и лимитов берём его хеш. Сервис входа Supabase хранит адрес и тип браузера к анонимному ключу, пока эта сессия жива; журнал входов чистим через 30 дней. Площадки держат адрес в технических логах по своим правилам, обычно до 30 дней.</li>
         </ul>
@@ -129,7 +131,7 @@
           <li>Free, no sign-up. Your prediction is stored in the browser and, from your first pick, on the server so the challenge link and the crowd comparison work.</li>
           <li>Your card with its name, title, picks and signature is visible to anyone who has your challenge link, and it shows in that link's preview in messengers. Do not put your real name on the card if you do not want it seen.</li>
           <li>You choose the name on the card. Other people's names, slurs, links and ads are removed without notice, and such a card may be deleted.</li>
-          <li>You can change your early prediction until the nominees are announced (planned for November 16, 2026; if The Game Awards picks another day, the freeze moves to one hour before it). After the announcement the game opens again on the official nominees: early hits stay with a bonus, misses can be swapped until the show starts on December 10. Results are counted on nominees day and on show night.</li>
+          <li>You can change your early prediction until the nominees are announced (planned for November 16, 2026; if The Game Awards picks another day, the freeze moves to one hour before it). After the announcement the game opens again on the official nominees: early hits stay with a bonus, misses can be swapped until the show starts on December 10. You can also change an early hit, but it loses its bonus. Results are counted on nominees day and on show night.</li>
           <li>Verdiqt odds and ratings are part of the game, not betting advice.</li>
         </ul>
       </section>
@@ -140,6 +142,7 @@
           <li><b>Your prediction and an anonymous browser key</b>: so the game works, your card opens by link and compares with the crowd. We do not ask for an account, your real name or a phone number.</li>
           <li><b>The name on the card and the signature</b>: only your text and your drawing.</li>
           <li><b>Email</b>, only if you left it: two emails, on nominees day and on show night. No newsletters. Unsubscribe with the link in the email or by writing to us.</li>
+          <li><b>Feedback</b>, only if you left it: your reaction to the game or a note about a bug, with browser type and window size attached to the note. Kept for up to 13 months. Please keep personal details out of it.</li>
           <li><b>Funnel counters</b> (opened, started, picked, sealed, shared), your <b>country</b> as two letters and the <b>site you came from</b> (domain only, no page address): to see where the game does not load and what to improve. No third-party analytics, no ad trackers.</li>
           <li><b>IP address</b> is not stored in plain form in the game data: we use a hash of it for spam protection and rate limits. The Supabase sign-in service keeps the address and browser type with the anonymous key while that session is active; the sign-in log is cleared after 30 days. Hosting providers keep the address in technical logs under their own rules, usually up to 30 days.</li>
         </ul>

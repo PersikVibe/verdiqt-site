@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script>(function(){var e=false;try{var h=location.hash.slice(1),p=JSON.parse(localStorage.getItem('ga.v4.prefs')||'{}').lang,l=navigator.languages||[navigator.language];e=h==='en'||(h!=='ru'&&(p==='en'||(p!=='ru'&&l.length>0&&!l.some(function(x){return /^(ru|be|uk|kk)([-_]|$)/i.test(String(x))}))))}catch(_){}var s=e?'_en':'';[['pult/pult_off'+s+'.webp','image','high',0],['pult2/pult'+s+'.glb','fetch','low',1]].forEach(function(f){var n=document.createElement('link');n.rel='preload';n.href='/'+f[0];n.as=f[1];n.setAttribute('fetchpriority',f[2]);if(f[3])n.crossOrigin='anonymous';document.head.appendChild(n)})})()</script>
+
 <meta charset="utf-8">
 <base href="/">
 <title>Day-One Backer · Verdiqt</title>
@@ -10,15 +12,15 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:title" content="Day-One Backer · Verdiqt">
 <meta property="og:description" content="My call for The Game Awards 2026 is sealed. Can you beat it?">
-<meta property="og:image" content="https://verdiqt.app/og/small-en.jpg">
+<meta property="og:image" content="https://verdiqt.app/og/small-en-v4.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Day-One Backer · Verdiqt">
 <meta name="twitter:description" content="My call for The Game Awards 2026 is sealed. Can you beat it?">
-<meta name="twitter:image" content="https://verdiqt.app/og/small-en.jpg">
+<meta name="twitter:image" content="https://verdiqt.app/og/small-en-v4.jpg">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
-<meta name="theme-color" content="#FFE39A">
+<meta name="theme-color" content="#050506">
 <link rel="icon" type="image/svg+xml" href="./logo/verdiqt-q.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="./logo/verdiqt-q-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="./logo/verdiqt-q-180.png">
@@ -39,6 +41,8 @@
 <script>try{var p=JSON.parse(localStorage.getItem('ga.v4.prefs')||'{}'),d=JSON.parse(localStorage.getItem('ga.v4.draft')||'{}');if(p.startTone&&p.startTone!=='light'&&(p.start||'pult')==='pult'&&!Object.keys(d.picks||{}).length&&!Object.keys(d.skipped||{}).length)document.documentElement.classList.add('st-dark');if(p.loader!=='off'&&!/ld=off/.test(location.hash)&&(!navigator.webdriver||/ld=on/.test(location.hash))&&(p.start||'pult')==='pult'&&!Object.keys(d.picks||{}).length&&!Object.keys(d.skipped||{}).length)document.documentElement.classList.add('ld4')}catch(e){}</script>
 <style>
 html.st-dark, html.st-dark body, html.ld4, html.ld4 body { background: #050506; }
+/* Полосы Safari (р18, п. 1, barcolor.ts): загрузка и старт держат свой цвет, новые iOS берут его с фона страницы; тройной класс сильнее html.studio[data-skin] с его #060606 !important. */
+html.bar-hold.bar-hold.bar-hold, html.bar-hold body { background-color: var(--bar) !important; }
 /* Заглушка без WebGL и для старых браузеров: показывается инлайн-скриптом ниже до загрузки основного кода. */
 #nogl { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 16px; background: #EAE9ED; font-family: 'Roboto Flex', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; }
 #nogl[hidden] { display: none; }
@@ -48,18 +52,17 @@ html.st-dark, html.st-dark body, html.ld4, html.ld4 body { background: #050506; 
 #nogl p[lang=en] { color: #6B6A72; font-size: 14px; }
 #nogl code { display: block; margin-top: 4px; padding: 10px 12px; border-radius: 6px; background: #F1F0F4; font: 600 13px/1.3 ui-monospace, Menlo, Consolas, monospace; word-break: break-all; -webkit-user-select: all; user-select: all; }
 </style>
-  <script type="module" crossorigin src="./assets/v4-C-Ri79eg.js"></script>
+  <script type="module" crossorigin src="./assets/v4-BR0BBx8l.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/three-rCrYZDxC.js">
-  <link rel="stylesheet" crossorigin href="./assets/v4-D3zZQD35.css">
+  <link rel="stylesheet" crossorigin href="./assets/v4-D8q3Ju_z.css">
   <link rel="preconnect" href="https://oomdnatdmdknuebyefdo.supabase.co" crossorigin>
-  <link rel="modulepreload" href="./assets/startpult-yDW178Zy.js" crossorigin>
-  <link rel="modulepreload" href="./assets/pult3d-B0vDQetb.js" crossorigin>
+  <link rel="modulepreload" href="./assets/startpult-B7n8GzL4.js" crossorigin>
+  <link rel="modulepreload" href="./assets/pult3d-ChvMz57R.js" crossorigin>
+  <link rel="modulepreload" href="./assets/RectAreaLightUniformsLib-CttvAlPm.js" crossorigin>
   <link rel="preload" as="fetch" href="./pult/pult.json" crossorigin>
-  <link rel="preload" as="fetch" href="./pult/pult3d.json" crossorigin>
-  <link rel="preload" as="fetch" href="./pult/pult.glb" crossorigin fetchpriority="low">
+  <link rel="preload" as="fetch" href="./pult2/pult3d.json" crossorigin>
   <link rel="preload" as="fetch" href="./draco/draco_wasm_wrapper.js" crossorigin fetchpriority="low">
   <link rel="preload" as="fetch" href="./draco/draco_decoder.wasm" crossorigin fetchpriority="low">
-  <link rel="preload" as="image" href="./pult/pult_off.webp" fetchpriority="high">
 </head>
 <body>
 <div id="app"></div>

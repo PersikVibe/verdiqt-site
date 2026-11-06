@@ -13,5 +13,5 @@
   },
   "nominees": [],
   "goldenJoystickWinner": null,
-  "_about": "Итоги The Game Awards 2026 для развязки. 17.11: вписать номинантов каждой номинации в nominees (id из data/contenders-2026.json, для игр вне пула просто название), поставить status: nominees и nomineesAt. 10.12: вписать winner по мере объявления и поставить status: winners. Необязательный блок crowd: { nominees: { hits: [n0..n6] }, winners: { hits: [n0..n6] } } с распределением попаданий по всем прогнозам (считается SQL-запросом раз после заморозки), даёт строку «точнее N% прогнозов». Пример заполнения: results-early-2026.sample.json."
+  "_about": "Памятка на вечер номинантов: launch/stage2-2026-11-16.md. Итоги The Game Awards 2026 для развязки. 17.11: вписать номинантов каждой номинации в nominees (id из data/contenders-2026.json, для игр вне пула просто название), поставить status: nominees и nomineesAt. 10.12: вписать winner по мере объявления и поставить status: winners. Необязательный блок crowd: { nominees: { hits: [n0..n6] }, winners: { hits: [n0..n6] } } с распределением попаданий по всем прогнозам (считается SQL-запросом раз после заморозки), даёт строку «точнее N% прогнозов». Пример заполнения: results-early-2026.sample.json."
 }
