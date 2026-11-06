@@ -828,5 +828,18 @@
   "note": "Добавлено 29.10.2026 при пересмотре лонг-листов.",
   "fetched": "2026-10-29",
   "shotFetched": "2026-10-29"
+ },
+ "tiny-eden": {
+  "steam": 3375110,
+  "name": "Tiny Eden",
+  "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3375110/489df5536cd98813184b2c5bb1b48298d1b990e5/library_capsule_2x.jpg?t=1793291904",
+  "hero": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3375110/853fa6d45c51ee07c6087b2021d60044fc86a440/library_hero_2x.jpg?t=1793291904",
+  "header": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3375110/0b5b185315c8df684c2566c2e9c74fb85432b9aa/header_2x.jpg?t=1793291904",
+  "checked": "2026-11-06",
+  "shot": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3375110/8f70a7422166700ab0bcd9dcbac496cae63f9237/ss_8f70a7422166700ab0bcd9dcbac496cae63f9237.1920x1080.jpg?t=1793291904",
+  "shotFrom": "Steam appdetails, скриншот #6 из 15, теплица без интерфейса",
+  "shotChecked": "2026-11-06",
+  "fetched": "2026-11-06",
+  "shotFetched": "2026-11-06"
  }
 }
