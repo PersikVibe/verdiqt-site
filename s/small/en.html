@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <link rel="modulepreload" crossorigin href="./assets/barcolor-B4ZruJQd.js">
+  <script type="module" crossorigin src="./assets/ld4-CDGEKjQH.js"></script>
+  <script type="module" async crossorigin src="./assets/early-BOpVwSq6.js"></script>
   <script>(function(){var e=false;try{var h=location.hash.slice(1),p=JSON.parse(localStorage.getItem('ga.v4.prefs')||'{}').lang,l=navigator.languages||[navigator.language];e=h==='en'||(h!=='ru'&&(p==='en'||(p!=='ru'&&l.length>0&&!l.some(function(x){return /^(ru|be|uk|kk)([-_]|$)/i.test(String(x))}))))}catch(_){}var s=e?'_en':'';[['pult/pult_off'+s+'.webp','image','high',0],['pult2/pult'+s+'.glb','fetch','low',1]].forEach(function(f){var n=document.createElement('link');n.rel='preload';n.href='/'+f[0];n.as=f[1];n.setAttribute('fetchpriority',f[2]);if(f[3])n.crossOrigin='anonymous';document.head.appendChild(n)})})()</script>
 
 <meta charset="utf-8">
@@ -26,19 +29,20 @@
 <link rel="apple-touch-icon" sizes="180x180" href="./logo/verdiqt-q-180.png">
 <!-- Превью ссылки. Картинки public/og собирает scripts/og/build.mjs; картинка главной экспортирована из Figma (scripts/og/README.md, п. 4b); для /en и страниц-вызовов /s/<титул> свои теги ставит scripts/og/pages.mjs. -->
 <!-- Шрифты лежат у нас (public/fonts, пересборка: node scripts/fonts.mjs): без обращения к Google и без круга «CSS → файл».
-     Холсты карт ждут эти четыре файла до первого экрана (assets.ts, fonts()), поэтому они в preload; остальные подмножества
+     Холсты карт ждут эти четыре файла до первого экрана (assets.ts, fonts()), поэтому они в preload; Tektur (08.11 вместо Unbounded) это число загрузки и заголовок пульта в паре по умолчанию; остальные подмножества
      (latin-ext, cyrillic-ext, Cormorant для RPG) браузер возьмёт сам по unicode-range. -->
 <link rel="preload" href="./fonts/roboto-flex-v30-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./fonts/roboto-flex-v30-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./fonts/shantell-sans-v13-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./fonts/shantell-sans-v13-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="./fonts/unbounded-v12-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/tektur-v6-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/tektur-v6-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./fonts/onest-v11-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./fonts/fonts.css">
 <!-- Экран загрузки старта (30.10, loader4.ts): чёрный с первого кадра, свой вход раньше основного кода.
      Тёмная подложка старта (24.10): тёмный фон с первой отрисовки, ещё до стилей и скриптов игры, иначе мелькал белый экран.
-     Те же условия, что в main4.ts: старт «Пульт», подложка не светлая, черновик пустой. -->
-<script>try{var p=JSON.parse(localStorage.getItem('ga.v4.prefs')||'{}'),d=JSON.parse(localStorage.getItem('ga.v4.draft')||'{}');if(p.startTone&&p.startTone!=='light'&&(p.start||'pult')==='pult'&&!Object.keys(d.picks||{}).length&&!Object.keys(d.skipped||{}).length)document.documentElement.classList.add('st-dark');if(p.loader!=='off'&&!/ld=off/.test(location.hash)&&(!navigator.webdriver||/ld=on/.test(location.hash))&&(p.start||'pult')==='pult'&&!Object.keys(d.picks||{}).length&&!Object.keys(d.skipped||{}).length)document.documentElement.classList.add('ld4')}catch(e){}</script>
+     Те же условия, что в main4.ts: старт «Пульт», подложка не светлая, черновик пустой. Загрузка только у того, кто старт ещё не видел (startgate.ts, 08.11). -->
+<script>try{var p=JSON.parse(localStorage.getItem('ga.v4.prefs')||'{}'),d=JSON.parse(localStorage.getItem('ga.v4.draft')||'{}');if(p.startTone&&p.startTone!=='light'&&(p.start||'pult')==='pult'&&!Object.keys(d.picks||{}).length&&!Object.keys(d.skipped||{}).length)document.documentElement.classList.add('st-dark');var s=localStorage.getItem('ga.v4.ld4')==='1'||localStorage.getItem('ga.v4.prefs')!=null;if(p.loader!=='off'&&!/ld=off/.test(location.hash)&&(!navigator.webdriver||/ld=on/.test(location.hash))&&(!s||/ld=on/.test(location.hash))&&(p.start||'pult')==='pult'&&!Object.keys(d.picks||{}).length&&!Object.keys(d.skipped||{}).length)document.documentElement.classList.add('ld4')}catch(e){}</script>
 <style>
 html.st-dark, html.st-dark body, html.ld4, html.ld4 body { background: #050506; }
 /* Полосы Safari (р18, п. 1, barcolor.ts): загрузка и старт держат свой цвет, новые iOS берут его с фона страницы; тройной класс сильнее html.studio[data-skin] с его #060606 !important. */
@@ -52,12 +56,16 @@ html.bar-hold.bar-hold.bar-hold, html.bar-hold body { background-color: var(--ba
 #nogl p[lang=en] { color: #6B6A72; font-size: 14px; }
 #nogl code { display: block; margin-top: 4px; padding: 10px 12px; border-radius: 6px; background: #F1F0F4; font: 600 13px/1.3 ui-monospace, Menlo, Consolas, monospace; word-break: break-all; -webkit-user-select: all; user-select: all; }
 </style>
-  <script type="module" crossorigin src="./assets/v4-CWn3yxoc.js"></script>
+  <script type="module" crossorigin src="./assets/v4-CffzMqHS.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/early-BOpVwSq6.js">
+  <link rel="modulepreload" crossorigin href="./assets/barcolor-B4ZruJQd.js">
   <link rel="modulepreload" crossorigin href="./assets/three-rCrYZDxC.js">
-  <link rel="stylesheet" crossorigin href="./assets/v4-CS0Mc-mS.css">
+  <script>(function(){var h="./assets/v4-DI9ZExQE.css";document.write(document.documentElement.classList.contains('ld4')?'<link rel="preload" as="style" crossorigin fetchpriority="high" href="'+h+'"><link id="v4css" rel="stylesheet" crossorigin media="print" onload="this.media=\'all\'" href="'+h+'">':'<link rel="stylesheet" crossorigin href="'+h+'">')})()</script>
   <link rel="preconnect" href="https://oomdnatdmdknuebyefdo.supabase.co" crossorigin>
-  <link rel="modulepreload" href="./assets/startpult-D1O_45Pv.js" crossorigin>
-  <link rel="modulepreload" href="./assets/pult3d-BGrDHPpG.js" crossorigin>
+  <link rel="modulepreload" href="./assets/startpult-DfLLnQsi.js" crossorigin>
+  <link rel="modulepreload" href="./assets/barcolor-B4ZruJQd.js" crossorigin>
+  <link rel="modulepreload" href="./assets/early-BOpVwSq6.js" crossorigin>
+  <link rel="modulepreload" href="./assets/pult3d-D_6fROJh.js" crossorigin>
   <link rel="modulepreload" href="./assets/RectAreaLightUniformsLib-CttvAlPm.js" crossorigin>
   <link rel="preload" as="fetch" href="./pult/pult.json" crossorigin>
   <link rel="preload" as="fetch" href="./pult2/pult3d.json" crossorigin>
@@ -92,6 +100,7 @@ html.bar-hold.bar-hold.bar-hold, html.bar-hold body { background-color: var(--ba
   document.getElementById('nogl-url').textContent = location.href;
 })();
 </script>
+<!-- Замеры старта (startmetrics.ts): событие open уходит сразу, раньше загрузчика и основного кода -->
 <script nomodule>document.getElementById('nogl').hidden = false; document.getElementById('nogl-url').textContent = location.href;</script>
 </body>
 </html>

@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="ru" data-lang="ru" data-v="1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ECEBF0">
+<meta name="robots" content="noindex">
+<title>404 · Verdiqt</title>
+<link rel="icon" type="image/svg+xml" href="/logo/verdiqt-q.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/logo/verdiqt-q-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/logo/verdiqt-q-180.png">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<script>
+  /*
+   * Страница 404 (08.11.2026). GitHub Pages отдаёт её на любом неверном адресе, поэтому все пути от корня сайта.
+   * Язык как в игре (src/v4/i18n.ts): ?lang= сильнее, потом список браузера: ru, be, uk, kk дают русский, остальное английский.
+   * Направление ?v=1|2|3 (сдержанное, смелое, неожиданное), по умолчанию 3: «брошенную карту» выбрал Владимир 08.11. Без three.js, только CSS и маленький скрипт.
+   */
+  (function () {
+    var d = document.documentElement, q = new URLSearchParams(location.search);
+    var l = q.get('lang');
+    if (l !== 'ru' && l !== 'en') {
+      var ls = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+      var cs = ls.map(function (x) { return String(x || '').toLowerCase().split(/[-_]/)[0]; }).filter(Boolean);
+      l = !cs.length || cs.some(function (c) { return c === 'ru' || c === 'be' || c === 'uk' || c === 'kk'; }) ? 'ru' : 'en';
+    }
+    var v = q.get('v');
+    d.lang = l; d.dataset.lang = l; d.dataset.v = v === '1' || v === '2' ? v : '3';
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) d.dataset.still = '';
+  })();
+</script>
+<style>
+  :root {
+    --studio: #ECEBF0; --ink: #14131A; --mute: #5E5C66; --acc: #FF5A1F; --orange: #F2541B; --blue: #2B6FF2;
+    --led: #FFB23D; --graphite: #17141F; --paper: #fff;
+    --ease: cubic-bezier(.33, 1, .68, 1);
+    --head: 'Tektur', 'Onest', system-ui, sans-serif; --text: 'Onest', system-ui, sans-serif; --hand: 'Shantell Sans', cursive;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body { background: var(--studio); color: var(--ink); font-family: var(--text); font-size: 17px; line-height: 1.45; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  a { color: inherit; }
+  /* чужой язык прячется точечно: показанный элемент сохраняет свой display (подписи в пузырях блочные) */
+  html[data-lang="ru"] [data-l="en"], html[data-lang="en"] [data-l="ru"] { display: none !important; }
+  .scene { display: none; min-height: 100vh; min-height: 100dvh; }
+  html[data-v="1"] .s1, html[data-v="2"] .s2, html[data-v="3"] .s3 { display: grid; }
+
+  /* общие детали: логотип, кнопка как в игре (чёрная плашка), ссылка на правила */
+  .brand { display: inline-block; line-height: 0; }
+  .brand img { height: 30px; width: auto; }
+  .btn { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 0 28px; border-radius: 6px; background: var(--ink); color: #fff;
+    font-family: var(--head); font-weight: 800; font-size: 17px; letter-spacing: .02em; text-transform: uppercase; text-decoration: none;
+    box-shadow: 0 4px 0 #000, 0 10px 24px rgba(20, 19, 26, .18); transition: transform .12s var(--ease), box-shadow .12s var(--ease); }
+  .btn:active { transform: translateY(3px); box-shadow: 0 1px 0 #000, 0 4px 10px rgba(20, 19, 26, .18); }
+  .btn .ar { font-family: var(--text); font-weight: 700; }
+  .rules { font-size: 13px; color: var(--mute); text-align: center; }
+  .rules a { color: var(--ink); font-weight: 700; }
+  .foot { font-size: 12px; color: var(--mute); text-align: center; }
+
+  /* студийный фон игры: светлая студия, сетка, мягкий свет сверху */
+  .studio { background:
+      radial-gradient(120% 70% at 50% 0%, rgba(255, 255, 255, .9), rgba(255, 255, 255, 0) 60%),
+      linear-gradient(rgba(20, 19, 26, .045) 1px, transparent 1px) 0 0 / 24px 24px,
+      linear-gradient(90deg, rgba(20, 19, 26, .045) 1px, transparent 1px) 0 0 / 24px 24px,
+      var(--studio); }
+
+  /* лента с ✦ (как в студии игры) */
+  .tape { position: absolute; left: -10%; width: 120%; height: 40px; display: flex; align-items: center; overflow: hidden; background: var(--orange); color: #fff;
+    font-family: var(--head); font-weight: 800; font-size: 15px; letter-spacing: .08em; white-space: nowrap; text-transform: uppercase; box-shadow: 0 8px 20px rgba(242, 84, 27, .25); }
+  .tape span { display: inline-block; padding-left: 0; animation: tape 26s linear infinite; }
+  .tape.b { background: var(--blue); box-shadow: 0 8px 20px rgba(43, 111, 242, .2); }
+  .tape.b span { animation-direction: reverse; }
+  @keyframes tape { to { transform: translateX(-50%); } }
+
+  /* ───────── 1. Сдержанное: студия, большие цифры ───────── */
+  .s1 { position: relative; overflow: hidden; grid-template-rows: auto 1fr auto; padding: max(18px, env(safe-area-inset-top)) 20px max(20px, env(safe-area-inset-bottom)); }
+  .s1 .tape { top: 72%; transform: rotate(-9deg); z-index: 0; opacity: .95; }
+  .s1 .tape.b { top: 79%; transform: rotate(6deg); }
+  .s1 .mid { position: relative; z-index: 1; align-self: center; justify-self: center; width: 100%; max-width: 980px; display: grid; justify-items: start; }
+  .big { position: relative; margin: 0; font-family: var(--head); font-weight: 900; font-size: min(46vw, 400px); line-height: .8; letter-spacing: -.02em; color: var(--ink); display: flex; }
+  .big b { display: block; font-weight: 900; animation: rise .9s var(--ease) both; }
+  .big b:nth-child(2) { animation-delay: .08s; color: var(--acc); }
+  .big b:nth-child(3) { animation-delay: .16s; }
+  @keyframes rise { from { transform: translateY(40%); opacity: 0; } }
+  .s1 .hand { position: absolute; right: -.2em; bottom: -.55em; font-family: var(--hand); font-weight: 800; font-size: max(20px, min(6vw, 44px)); color: var(--acc); transform: rotate(-7deg); white-space: nowrap; animation: fade .6s .7s var(--ease) both; }
+  @keyframes fade { from { opacity: 0; transform: rotate(-7deg) translateY(8px); } }
+  .s1 .copy { position: relative; z-index: 1; display: grid; gap: 14px; width: 100%; max-width: 980px; justify-self: center; margin-top: 18px; }
+  .s1 h1 { margin: 0; font-family: var(--head); font-weight: 800; font-size: clamp(32px, 9vw, 64px); line-height: .98; }
+  .s1 .copy p { margin: 0; max-width: 32em; color: var(--ink); }
+  .s1 .card { background: var(--paper); border-radius: 8px; padding: 16px; display: grid; gap: 14px; box-shadow: 0 0 0 1.5px rgba(20, 19, 26, .12), 0 18px 40px rgba(20, 19, 26, .08); }
+  @media (min-width: 900px) {
+    .s1 { padding: 32px 56px 32px; }
+    .s1 .mid { grid-template-columns: 1fr 380px; align-items: end; gap: 48px; }
+    .s1 .copy { margin: 0; }
+    .s1 .tape { top: 82%; } .s1 .tape.b { top: 88%; }
+    .btn { justify-self: start; }
+  }
+
+  /* ───────── 2. Смелое: LED-экран пульта на весь кадр ───────── */
+  .s2 { background: var(--orange); grid-template-rows: auto 1fr auto; gap: 14px; padding: max(14px, env(safe-area-inset-top)) 14px max(16px, env(safe-area-inset-bottom));
+    background-image: radial-gradient(120% 80% at 30% 0%, rgba(255, 255, 255, .22), rgba(255, 255, 255, 0) 55%); box-shadow: inset 10px 0 0 var(--blue); }
+  .s2 .top { display: flex; justify-content: space-between; align-items: center; padding: 2px 4px 0 10px; }
+  .s2 .top .tag { font-family: var(--head); font-weight: 800; font-size: 12px; letter-spacing: .1em; color: rgba(20, 19, 26, .7); }
+  .bezel { position: relative; background: #0B0A0E; border-radius: 22px; padding: 12px; box-shadow: inset 0 0 0 3px rgba(0, 0, 0, .5), inset 0 2px 0 rgba(255, 255, 255, .08), 0 2px 0 rgba(255, 255, 255, .3), 0 16px 30px rgba(110, 30, 0, .35); min-height: 0; }
+  .bezel canvas { position: absolute; left: 12px; top: 12px; display: block; border-radius: 12px; }
+  .bezel::after { content: ''; position: absolute; inset: 12px; border-radius: 12px; pointer-events: none;
+    background: linear-gradient(160deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, 0) 35%); }
+  .s2 .deck { display: grid; grid-template-columns: auto 1fr; align-items: end; gap: 10px; }
+  .beast { position: relative; width: 132px; height: 152px; }
+  /* стикер кота-жюри (card/stickers есть в сборке сайта, песочницы start2 и start3 сборка вырезает) */
+  .beast .stk { position: absolute; inset: 0; background: url(/card/stickers/cat.webp) 50% 100% / contain no-repeat; animation: shrug 2.8s var(--ease) infinite; transform-origin: 50% 100%; }
+  @keyframes shrug { 0%, 60%, 100% { transform: translateY(0) rotate(0); } 70% { transform: translateY(-10px) rotate(-4deg); } 80% { transform: translateY(-6px) rotate(3deg); } }
+  .bubble { position: absolute; left: 70px; top: -52px; width: max-content; max-width: 210px; background: var(--ink); color: #fff; border-radius: 10px; padding: 8px 12px; font-size: 14px; line-height: 1.3; box-shadow: 0 8px 20px rgba(0, 0, 0, .25); }
+  .bubble small { display: block; font-family: var(--head); font-weight: 800; font-size: 10px; letter-spacing: 0; text-transform: uppercase; color: #FF9A14; margin-bottom: 2px; }
+  .s2 .ctrl { display: grid; gap: 10px; justify-items: end; }
+  .key { position: relative; display: grid; place-items: center; width: 100%; max-width: 360px; min-height: 64px; border-radius: 14px; background: #1A1820; color: #fff; text-decoration: none;
+    font-family: var(--head); font-weight: 900; font-size: 18px; letter-spacing: .06em; text-transform: uppercase;
+    box-shadow: inset 0 2px 0 rgba(255, 255, 255, .14), 0 6px 0 #000, 0 14px 22px rgba(110, 30, 0, .4); transition: transform .1s var(--ease), box-shadow .1s var(--ease); }
+  .key:active { transform: translateY(5px); box-shadow: inset 0 2px 0 rgba(255, 255, 255, .14), 0 1px 0 #000, 0 4px 10px rgba(110, 30, 0, .4); }
+  .key i { position: absolute; right: 16px; top: 50%; width: 10px; height: 10px; margin-top: -5px; border-radius: 50%; background: #FF3B30; box-shadow: 0 0 10px #FF3B30; animation: blink 1.2s steps(2) infinite; }
+  @keyframes blink { 50% { opacity: .25; } }
+  .s2 .rules, .s2 .rules a { color: rgba(20, 19, 26, .75); }
+  @media (min-width: 900px) {
+    .s2 { padding: 26px 40px 30px 56px; gap: 22px; box-shadow: inset 16px 0 0 var(--blue); }
+    .bezel { padding: 18px; border-radius: 30px; } .bezel::after { inset: 18px; } .bezel canvas { left: 18px; top: 18px; }
+    .beast { width: 170px; height: 196px; } .bubble { left: 150px; top: 20px; max-width: 260px; font-size: 15px; }
+    .s2 .deck { grid-template-columns: auto 1fr auto; }
+    .s2 .ctrl { grid-column: 3; min-width: 360px; }
+  }
+
+  /* ───────── 3. Брошенная карта (третий заход 08.11, по правкам Владимира) ─────────
+     Карта как в игре: перламутровая рамка, лицо-заглушка «Табло» (coverstub.ts), подвал с номинацией, рубашка колоды
+     (drawDeckBack). Вид сверху, без наклона стола: 3D только на перевороте, поэтому плоскости не пересекаются.
+     Такт: карту сдают по столу рубашкой вверх (скольжение с трением), она переворачивается, табло включается точками,
+     в угол шлёпается наклейка «Брошено» (как в игре: без текста, наклон в рисунке), выглядывает кролик с репликой. */
+  .s3 { position: relative; overflow: hidden; grid-template-rows: auto minmax(0, 1fr) auto auto; padding: max(16px, env(safe-area-inset-top)) 20px max(18px, env(safe-area-inset-bottom)); }
+  /* зерно поверх студии: без фактуры свет выглядит стерильно */
+  .s3::before { content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 5; opacity: .07; mix-blend-mode: multiply;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .s3 header { position: relative; z-index: 4; }
+  .t3 { position: relative; min-height: 430px; --cw: min(52vw, 204px); }
+  .t3::before { content: ''; position: absolute; left: 50%; top: 48%; width: 150%; aspect-ratio: 1.6; transform: translate(-50%, -50%); pointer-events: none;
+    background: radial-gradient(closest-side, rgba(255, 255, 255, .95), rgba(255, 255, 255, 0)); animation: lamp .5s var(--ease) both; }
+  @keyframes lamp { from { opacity: 0; } }
+  /* огромное 404 контуром за столом: тяжёлое слово под предметом */
+  .giant { position: absolute; left: 50%; top: 46%; transform: translate(-50%, -50%); margin: 0; font-family: var(--head); font-weight: 900; font-size: min(68vw, 300px); line-height: .8; letter-spacing: -.03em;
+    color: rgba(20, 19, 26, .035); -webkit-text-stroke: 1.5px rgba(20, 19, 26, .13); white-space: nowrap; pointer-events: none; user-select: none; animation: giant .7s .05s var(--ease) both; }
+  @keyframes giant { from { opacity: 0; transform: translate(-50%, -40%); } }
+  /* положение карты на столе; сдача: прилетает справа снизу, скользит и тормозит трением, доворачивается на место */
+  .lay3 { position: absolute; left: 40%; top: 41%; width: var(--cw); aspect-ratio: 2 / 3; transform: translate(-50%, -50%) rotate(-6deg); animation: deal .9s .08s cubic-bezier(.22, 1, .36, 1) both; }
+  @keyframes deal { 0% { transform: translate(calc(-50% + 85vw), calc(-50% + 34vh)) rotate(42deg); } 78% { transform: translate(-50%, -50%) rotate(-8.5deg); } }
+  .dip3 { position: absolute; inset: 0; animation: dip .32s 1.44s var(--ease) both; }
+  @keyframes dip { 35% { transform: scale(.975); } }
+  /* сама карта: переворот, подъём и лёгкий наклон к курсору из скрипта; до сдачи лежит рубашкой */
+  .card3 { position: absolute; inset: 0; transform-style: preserve-3d; cursor: pointer; outline: none; -webkit-tap-highlight-color: transparent; --flip: 0deg;
+    transform: perspective(1600px) rotateX(var(--tx, 0deg)) rotateY(calc(var(--flip) + var(--ty, 0deg))) scale(var(--lift, 1)); }
+  .card3:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; border-radius: 14px; }
+  .f { position: absolute; inset: 0; border-radius: calc(var(--cw) * .07); backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+  /* лицо: перламутр с отсветом номинации у низа, окно табло, подвал с названием номинации */
+  .f-front { background:
+      radial-gradient(70% 22% at 50% 100%, rgba(255, 106, 42, .5), rgba(255, 106, 42, 0)),
+      linear-gradient(135deg, #e9e8ed, #d6d4dc 48%, #ecebf0);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .85), inset 0 -2px 3px rgba(20, 19, 26, .12), 0 16px 30px -10px rgba(20, 19, 26, .45); }
+  .scr { position: absolute; left: calc(var(--cw) * .026); right: calc(var(--cw) * .026); top: calc(var(--cw) * .026); bottom: 8.6%; border-radius: calc(var(--cw) * .044); overflow: hidden; background: #050507;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .7); }
+  .scr canvas { display: block; width: 100%; height: 100%; }
+  .scr::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(90% 70% at 50% 45%, rgba(255, 255, 255, .035), rgba(0, 0, 0, .35)); }
+  .foot3 { position: absolute; left: 0; right: 0; bottom: 0; height: 8.6%; display: grid; place-items: center; font-family: var(--head); font-weight: 900;
+    font-size: calc(var(--cw) * .056); letter-spacing: .01em; text-transform: uppercase; color: rgba(23, 21, 28, .9); white-space: nowrap; }
+  /* оборот-постер, как у карт в игре (drawBackPoster): номинация, название, факты «номинанта», панель «Знакомо?» с отмеченным «Брошено».
+     Переворот теперь объясняет наклейку: это статус, который поставили этой странице */
+  .f-back { transform: rotateY(180deg); overflow: hidden; display: flex; flex-direction: column; gap: calc(var(--cw) * .03); padding: 9% 7% 7%; color: #fff;
+    border: calc(var(--cw) * .026) solid transparent;
+    background: radial-gradient(120% 45% at 50% 100%, rgba(255, 106, 42, .35), rgba(255, 106, 42, 0)) padding-box, linear-gradient(180deg, #17141f, #0d0b12) padding-box,
+      linear-gradient(135deg, #e9e8ed, #d6d4dc 48%, #ecebf0) border-box;
+    box-shadow: 0 16px 30px -10px rgba(20, 19, 26, .45); }
+  .f-back .pk { font-family: var(--head); font-weight: 800; font-size: calc(var(--cw) * .045); letter-spacing: .1em; text-transform: uppercase; color: var(--acc); }
+  .f-back .pt { font-family: var(--head); font-weight: 900; font-size: calc(var(--cw) * .125); line-height: .95; text-transform: uppercase; }
+  .f-back .ps { font-size: calc(var(--cw) * .043); line-height: 1.25; color: rgba(255, 255, 255, .62); }
+  .f-back .pst { margin-top: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: calc(var(--cw) * .02); }
+  .f-back .pst b { display: block; font-family: var(--head); font-weight: 900; font-size: calc(var(--cw) * .11); line-height: 1; }
+  .f-back .pst b.bl { color: #4C8DFF; }
+  .f-back .pst span { display: block; margin-top: 2px; font-weight: 800; font-size: calc(var(--cw) * .036); text-transform: uppercase; }
+  .f-back .pst i { display: block; font-style: normal; font-size: calc(var(--cw) * .032); color: rgba(255, 255, 255, .5); }
+  .f-back .chips { display: grid; grid-template-columns: repeat(4, 1fr); gap: calc(var(--cw) * .025); margin-top: calc(var(--cw) * .02); }
+  .f-back .ch { display: grid; justify-items: center; gap: 2px; padding: calc(var(--cw) * .02) 0; border-radius: calc(var(--cw) * .03); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .14); opacity: .45; }
+  .f-back .ch img { width: 74%; aspect-ratio: 1; }
+  .f-back .ch span { font-weight: 700; font-size: calc(var(--cw) * .032); white-space: nowrap; }
+  .f-back .ch.on { opacity: 1; background: rgba(224, 58, 47, .2); box-shadow: inset 0 0 0 2px #e03a2f; }
+  /* наклейка «Брошено» как в игре: без поворота и без подписи, со свесом за край. Угол правый верхний: в левом она закрывала «нет обложки» */
+  .stk3 { position: absolute; right: -19%; top: -12%; width: 52%; z-index: 2; pointer-events: none; opacity: 0; }
+  .stk3 img { display: block; width: 100%; }
+  .card3[data-side="back"] .stk3 { visibility: hidden; }
+  .stk3.on { animation: slap3 .38s cubic-bezier(.2, 1.5, .45, 1) both; opacity: 1; }
+  @keyframes slap3 { from { transform: scale(2.3) rotate(-18deg); opacity: 0; filter: blur(3px) drop-shadow(0 30px 20px rgba(0, 0, 0, .25)); } 55% { opacity: 1; filter: none; } }
+  /* кролик и пузырь одной группой: выглядывают вместе и вместе плавно парят */
+  .buddy { position: absolute; right: 0; bottom: 0; z-index: 3; width: min(32vw, 134px); animation: float 4.4s 2.5s ease-in-out infinite; }
+  .buddy .pop { position: relative; transform-origin: 70% 100%; animation: pop .55s 1.9s cubic-bezier(.3, 1.55, .5, 1) both; }
+  .buddy img { display: block; width: 100%; filter: drop-shadow(0 12px 14px rgba(20, 19, 26, .2)); }
+  .buddy.hop img { animation: hop .5s var(--ease); }
+  @keyframes pop { from { transform: translateY(40%) scale(.5); opacity: 0; } 40% { opacity: 1; } }
+  @keyframes float { 50% { transform: translateY(-8px); } }
+  @keyframes hop { 35% { transform: translateY(-14px) rotate(6deg); } }
+  /* пузырь как в игре (тёмный вид): подпись цветом зверя, у кролика розовая (GLOW в cardface.ts) */
+  .say { position: absolute; right: 80%; bottom: 5%; width: max-content; max-width: min(58vw, 240px); background: var(--ink); color: #fff; border-radius: 14px; padding: 10px 14px 11px;
+    font-size: 14.5px; line-height: 1.3; font-weight: 600; box-shadow: 0 0 0 1.5px rgba(255, 255, 255, .18), 0 18px 34px -12px rgba(20, 19, 26, .55);
+    transform-origin: 100% 80%; animation: say .38s 2.15s cubic-bezier(.2, .9, .25, 1.3) both; }
+  .say::after { content: ''; position: absolute; right: -5px; bottom: 14px; width: 12px; height: 12px; background: var(--ink); transform: rotate(45deg); border-radius: 2px; }
+  .say small { display: block; margin-bottom: 3px; font-family: var(--text); font-weight: 800; font-size: 11px; letter-spacing: 0; text-transform: uppercase; color: var(--who, #FF4F9A); }
+  @keyframes say { from { transform: scale(.5); opacity: 0; } }
+  .say .tx { display: block; animation: txt .25s var(--ease) both; }
+  .say .dots { display: none; gap: 4px; padding: 6px 0 3px; }
+  .say .dots i { width: 6px; height: 6px; border-radius: 50%; background: #fff; opacity: .4; animation: dot .9s ease-in-out infinite; }
+  .say .dots i:nth-child(2) { animation-delay: .15s; } .say .dots i:nth-child(3) { animation-delay: .3s; }
+  .say.typing .dots { display: flex; } .say.typing .tx { display: none; }
+  @keyframes dot { 40% { opacity: 1; transform: translateY(-2px); } }
+  @keyframes txt { from { opacity: 0; transform: translateY(4px); } }
+  /* рукописная подсказка со стрелкой: когда сцена отыграла; гаснет после первого переворота */
+  .hint3 { position: absolute; right: 0; top: 36%; z-index: 4; display: flex; flex-direction: column; align-items: flex-end; font-family: var(--hand); font-weight: 800; font-size: 18px; color: var(--acc);
+    transform: rotate(5deg); pointer-events: none; animation: txt .4s 3.3s var(--ease) both; transition: opacity .3s; }
+  .hint3 svg { width: 46px; height: 40px; overflow: visible; }
+  .hint3 path { fill: none; stroke: var(--acc); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw .5s 3.55s var(--ease) forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  .s3.flipped .hint3 { opacity: 0; }
+  /* текст: главное сообщение и кнопка по очереди, пока карта ещё едет: ответ не ждёт сцену */
+  .s3 .copy { position: relative; z-index: 4; display: grid; gap: 12px; width: 100%; max-width: 470px; justify-self: center; }
+  .s3 .copy > * { animation: up .5s var(--ease) both; }
+  .s3 .copy > :nth-child(1) { animation-delay: .5s; } .s3 .copy > :nth-child(2) { animation-delay: .58s; }
+  .s3 .copy > :nth-child(3) { animation-delay: .66s; } .s3 .copy > :nth-child(4) { animation-delay: .74s; }
+  @keyframes up { from { opacity: 0; transform: translateY(14px); } }
+  .s3 .copy .k { font-family: var(--head); font-weight: 800; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--acc); }
+  .s3 h1 { margin: 0; font-family: var(--head); font-weight: 900; font-size: clamp(32px, 9vw, 60px); line-height: .96; letter-spacing: -.01em; }
+  .s3 .copy p { margin: 0; color: #2b2a33; max-width: 26em; }
+  .s3 .btn { margin-top: 4px; }
+  .s3 footer { position: relative; z-index: 4; margin-top: 14px; }
+  @media (min-width: 900px) {
+    .s3 { grid-template-columns: minmax(0, 1.15fr) minmax(380px, .85fr); grid-template-rows: auto 1fr auto; column-gap: 24px; padding: 30px 64px 26px; }
+    .s3 header, .s3 footer { grid-column: 1 / -1; }
+    .t3 { min-height: 0; --cw: 292px; }
+    .giant { font-size: 380px; }
+    .lay3 { left: 42%; top: 47%; }
+    .buddy { width: 168px; right: 4%; bottom: 5%; }
+    .say { font-size: 15px; max-width: 260px; }
+    .hint3 { right: auto; left: 6%; top: 8%; align-items: flex-start; font-size: 24px; transform: rotate(-5deg); }
+    .hint3 svg { transform: scaleX(-1); }
+    .s3 .copy { align-self: center; justify-self: start; gap: 16px; }
+    .s3 .btn { justify-self: start; min-width: 240px; }
+  }
+  /* низкий экран телефона (Safari с панелями): карта меньше, кнопка остаётся в кадре */
+  @media (max-width: 899px) and (max-height: 760px) { .t3 { min-height: 350px; --cw: min(42vw, 154px); } .buddy { width: min(28vw, 112px); } .hint3 { top: 30%; } }
+
+  html[data-still] *, html[data-still] *::before, html[data-still] *::after { animation: none !important; transition: none !important; }
+</style>
+</head>
+<body>
+
+<!-- 1. Сдержанное -->
+<main class="scene s1 studio">
+  <header><a class="brand" href="/" data-home aria-label="Verdiqt"><img src="/logo/verdiqt-dark.svg" alt="Verdiqt" width="117" height="30"></a></header>
+  <div class="tape" aria-hidden="true"><span data-l="ru">404 ✦ такой номинации нет ✦ 404 ✦ такой номинации нет ✦ 404 ✦ такой номинации нет ✦ 404 ✦ такой номинации нет ✦ 404 ✦ такой номинации нет ✦ 404 ✦ такой номинации нет ✦ </span><span data-l="en">404 ✦ no such category ✦ 404 ✦ no such category ✦ 404 ✦ no such category ✦ 404 ✦ no such category ✦ 404 ✦ no such category ✦ 404 ✦ no such category ✦ 404 ✦ no such category ✦ </span></div>
+  <div class="tape b" aria-hidden="true"><span>verdiqt ✦ the game awards 2026 ✦ verdiqt ✦ the game awards 2026 ✦ verdiqt ✦ the game awards 2026 ✦ verdiqt ✦ the game awards 2026 ✦ verdiqt ✦ the game awards 2026 ✦ verdiqt ✦ the game awards 2026 ✦ </span></div>
+  <div class="mid">
+    <p class="big" aria-label="404"><b>4</b><b>0</b><b>4</b><span class="hand"><span data-l="ru">мимо шорт-листа</span><span data-l="en">not shortlisted</span></span></p>
+    <div class="copy">
+      <div class="card">
+        <h1><span data-l="ru">Такой номинации нет</span><span data-l="en">No such category</span></h1>
+        <p><span data-l="ru">Ссылка кривая или страницу убрали. Прогнозы ждут на главной.</span><span data-l="en">The link is off or the page is gone. Your calls are waiting on the main page.</span></p>
+        <a class="btn" href="/" data-home><span data-l="ru">На главную</span><span data-l="en">Back home</span><span class="ar">→</span></a>
+      </div>
+    </div>
+  </div>
+  <footer class="rules"><a href="/legal.html" data-rules><span data-l="ru">Правила</span><span data-l="en">Rules</span></a> · <span data-l="ru">Verdiqt не связан с The Game Awards</span><span data-l="en">Verdiqt is not affiliated with The Game Awards</span></footer>
+</main>
+
+<!-- 2. Смелое -->
+<main class="scene s2">
+  <div class="top"><a class="brand" href="/" data-home aria-label="Verdiqt"><img src="/logo/verdiqt-dark.svg" alt="Verdiqt" width="117" height="30"></a><span class="tag">ERR 404</span></div>
+  <div class="bezel"><canvas id="led" role="img" aria-label="404"></canvas></div>
+  <div class="deck">
+    <div class="beast" aria-hidden="true"><div class="stk"></div>
+      <div class="bubble"><small data-l="ru">Кот · Авторская версия</small><small data-l="en">Cat · Director’s Cut</small><span data-l="ru">В моём списке такой нет</span><span data-l="en">Not on my list either</span></div>
+    </div>
+    <div class="ctrl">
+      <a class="key" href="/" data-home><span data-l="ru">На главную</span><span data-l="en">Back home</span><i></i></a>
+      <div class="rules"><a href="/legal.html" data-rules><span data-l="ru">Правила</span><span data-l="en">Rules</span></a></div>
+    </div>
+  </div>
+</main>
+
+<!-- 3. Неожиданное: брошенная карта -->
+<main class="scene s3 studio">
+  <header><a class="brand" href="/" data-home aria-label="Verdiqt"><img src="/logo/verdiqt-dark.svg" alt="Verdiqt" width="117" height="30"></a></header>
+  <div class="t3">
+    <p class="giant" aria-hidden="true">404</p>
+    <div class="lay3" id="lay3">
+      <div class="dip3">
+        <div class="card3" id="card3" role="button" tabindex="0" aria-pressed="false" data-side="face">
+          <div class="f f-front">
+            <div class="scr"><canvas id="led3" aria-hidden="true"></canvas></div>
+            <div class="foot3"><span data-l="ru">Лучший тупик</span><span data-l="en">Best dead end</span></div>
+            <div class="stk3" id="stk3"><img src="/card/status/dropped.webp" alt=""></div>
+          </div>
+          <div class="f f-back" aria-hidden="true">
+            <span class="pk"><span data-l="ru">Лучший тупик</span><span data-l="en">Best dead end</span></span>
+            <b class="pt"><span data-l="ru">Страница 404</span><span data-l="en">Page 404</span></b>
+            <span class="ps"><span data-l="ru">verdiqt.app · интернет · квест без выхода</span><span data-l="en">verdiqt.app · the internet · no-exit quest</span></span>
+            <div class="pst">
+              <div><b class="bl">0</b><span data-l="ru">у критиков</span><span data-l="en">critics</span></div>
+              <div><b>0%</b><span data-l="ru">шанс</span><span data-l="en">chance</span><i data-l="ru">по оценке Verdiqt</i><i data-l="en">by Verdiqt</i></div>
+              <div><b>404</b><span data-l="ru">выход</span><span data-l="en">release</span><i data-l="ru">не вышла</i><i data-l="en">never out</i></div>
+            </div>
+            <div class="chips">
+              <span class="ch"><img src="/card/status/played.webp" alt="" decoding="async"></span>
+              <span class="ch"><img src="/card/status/watched.webp" alt="" decoding="async"></span>
+              <span class="ch on"><img src="/card/status/dropped.webp" alt="" decoding="async"><span data-l="ru">Брошено</span><span data-l="en">Dropped</span></span>
+              <span class="ch"><img src="/card/status/notplayed.webp" alt="" decoding="async"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="buddy" id="bun3" aria-hidden="true"><div class="pop">
+      <img src="/card/stickers/rabbit.webp" alt="">
+      <div class="say" id="say3" aria-live="polite"><small data-l="ru">Кролик · Платинщик</small><small data-l="en">Rabbit · Platinum</small><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="tx" id="tx3"><span data-l="ru">Застряла на 404, даже ачивку не дали</span><span data-l="en">Stuck at 404, not even an achievement</span></span></div>
+    </div></div>
+    <div class="hint3" aria-hidden="true"><span data-l="ru">переверни</span><span data-l="en">flip it</span><svg width="46" height="40" viewBox="0 0 46 40"><path pathLength="1" d="M42 4 C 40 22, 28 30, 6 30 M14 23 L5 30 L13 37"/></svg></div>
+  </div>
+  <div class="copy">
+    <span class="k"><span data-l="ru">Ошибка 404</span><span data-l="en">Error 404</span></span>
+    <h1><span data-l="ru">Страница не дошла до финала</span><span data-l="en">This page didn’t make the final</span></h1>
+    <p><span data-l="ru">Ссылка кривая или страницу убрали. Живые номинации ждут на главной.</span><span data-l="en">The link is off or the page is gone. The live categories are on the main page.</span></p>
+    <a class="btn" href="/" data-home><span data-l="ru">На главную</span><span data-l="en">Back home</span><span class="ar">→</span></a>
+  </div>
+  <footer class="rules"><a href="/legal.html" data-rules><span data-l="ru">Правила</span><span data-l="en">Rules</span></a> · <span data-l="ru">Verdiqt не связан с The Game Awards</span><span data-l="en">Verdiqt is not affiliated with The Game Awards</span></footer>
+</main>
+
+<script>
+(function () {
+  var d = document.documentElement, en = d.dataset.lang === 'en';
+  // английская главная живёт на /en, правила по-английски через ?lang=en
+  document.querySelectorAll('[data-home]').forEach(function (a) { a.href = en ? '/en' : '/'; });
+  document.querySelectorAll('[data-rules]').forEach(function (a) { a.href = en ? '/legal.html?lang=en' : '/legal.html'; });
+  if (d.dataset.v === '3') (function () {
+    /* брошенная карта: табло-заглушка точками (как coverstub.ts), сдача и переворот, кролик отвечает на переворот */
+    var GL = {
+      H: ['#...#', '#...#', '#...#', '#####', '#...#', '#...#', '#...#'], E: ['#####', '#....', '#....', '####.', '#....', '#....', '#####'],
+      T: ['#####', '..#..', '..#..', '..#..', '..#..', '..#..', '..#..'], O: ['.###.', '#...#', '#...#', '#...#', '#...#', '#...#', '.###.'],
+      K: ['#...#', '#..#.', '#.#..', '##...', '#.#..', '#..#.', '#...#'], N: ['#...#', '##..#', '#.#.#', '#..##', '#...#', '#...#', '#...#'],
+      C: ['.###.', '#...#', '#....', '#....', '#....', '#...#', '.###.'], V: ['#...#', '#...#', '#...#', '#...#', '#...#', '.#.#.', '..#..'],
+      R: ['####.', '#...#', '#...#', '####.', '#.#..', '#..#.', '#...#'],
+      'Б': ['#####', '#....', '#....', '####.', '#...#', '#...#', '####.'], 'Л': ['..###', '.#..#', '.#..#', '.#..#', '.#..#', '#...#', '#...#'],
+      'Ж': ['#.#.#', '#.#.#', '.###.', '..#..', '.###.', '#.#.#', '#.#.#'], 'И': ['#...#', '#..##', '#.#.#', '##..#', '#...#', '#...#', '#...#'],
+      '4': ['...#.', '..##.', '.#.#.', '#..#.', '#####', '...#.', '...#.'], '0': ['.###.', '#...#', '#..##', '#.#.#', '##..#', '#...#', '.###.'],
+      ' ': ['..', '..', '..', '..', '..', '..', '..']
+    };
+    [['Н', 'H'], ['Е', 'E'], ['Т', 'T'], ['О', 'O'], ['К', 'K']].forEach(function (p) { GL[p[0]] = GL[p[1]]; });
+    function gw(t, s) { var w = 0; for (var i = 0; i < t.length; i++) w += GL[t[i]][0].length * s + 1; return w - 1; }
+    function stamp(t, x0, y0, sx, sy, put) {
+      var x = x0;
+      for (var i = 0; i < t.length; i++) {
+        var g = GL[t[i]];
+        for (var j = 0; j < 7; j++) for (var k = 0; k < g[j].length; k++) if (g[j][k] === '#')
+          for (var a = 0; a < sx; a++) for (var b = 0; b < sy; b++) put(x + k * sx + a, y0 + j * sy + b);
+        x += g[0].length * sx + 1;
+      }
+    }
+    // табло 100 точек в ширину (у заглушки игры 120): серое «нет обложки» в безопасном поле, крупное 404 цветом номинации
+    var cv = document.getElementById('led3'), cx = cv.getContext('2d'), COLS = 100, ROWS = 139, lit = [], grey = [];
+    var HEAD = en ? 'NO COVER' : 'НЕТ ОБЛОЖКИ';
+    stamp(HEAD, 12, 14, 1, 1, function (x, y) { grey.push([x, y]); });
+    stamp('404', Math.round((COLS - gw('404', 5)) / 2), 50, 5, 6, function (x, y) { lit.push([x, y, Math.random()]); });
+    function size() {
+      var r = cv.getBoundingClientRect(), k = Math.min(2, devicePixelRatio || 1);
+      cv.width = Math.max(1, Math.round(r.width * k)); cv.height = Math.max(1, Math.round(r.height * k));
+    }
+    // p: 0 экран выключен, 1 всё горит; горящие точки садятся в случайном порядке, как в финале игры
+    function draw(p) {
+      var W = cv.width, H = cv.height, cw = W / COLS, ch = H / ROWS, c = Math.min(cw, ch);
+      cx.fillStyle = '#050507'; cx.fillRect(0, 0, W, H);
+      if (p <= 0) return;
+      cx.shadowBlur = 0;
+      cx.fillStyle = 'rgba(255,255,255,' + (.055 * Math.min(1, p * 3)).toFixed(3) + ')';
+      cx.beginPath();
+      for (var y = 0; y < ROWS; y++) for (var x = 0; x < COLS; x++) { cx.moveTo((x + .5) * cw + c * .3, (y + .5) * ch); cx.arc((x + .5) * cw, (y + .5) * ch, c * .3, 0, 6.2832); }
+      cx.fill();
+      var q = Math.max(0, Math.min(1, (p - .15) / .85));
+      cx.fillStyle = 'rgb(150,148,160)';
+      cx.beginPath();
+      grey.forEach(function (g) { if (q > 0) { cx.moveTo((g[0] + .5) * cw + c * .43, (g[1] + .5) * ch); cx.arc((g[0] + .5) * cw, (g[1] + .5) * ch, c * .43, 0, 6.2832); } });
+      cx.fill();
+      cx.fillStyle = '#FF7A3D'; cx.shadowColor = '#FF7A3D'; cx.shadowBlur = q >= 1 ? c * 1.6 : 0;
+      cx.beginPath();
+      lit.forEach(function (l) { if (l[2] < q * 1.05) { cx.moveTo((l[0] + .5) * cw + c * .43, (l[1] + .5) * ch); cx.arc((l[0] + .5) * cw, (l[1] + .5) * ch, c * .43, 0, 6.2832); } });
+      cx.fill();
+      cx.shadowBlur = 0;
+    }
+    var s3 = document.querySelector('.s3'), lay = document.getElementById('lay3'), card = document.getElementById('card3'), say = document.getElementById('say3'),
+      tx = document.getElementById('tx3'), bun = document.getElementById('bun3'), stk = document.getElementById('stk3');
+    var still = 'still' in d.dataset, faceUp = true, busy = true, typingT = 0, ledP = 0;
+    function set(k, v) { card.style.setProperty(k, v); }
+    function power() {
+      if (still) { ledP = 1; draw(1); return; }
+      var t0 = performance.now();
+      (function fr(t) { ledP = Math.min(1, (t - t0) / 520); draw(ledP); if (ledP < 1) requestAnimationFrame(fr); })(t0);
+    }
+    size(); draw(0);
+    addEventListener('resize', function () { size(); draw(ledP); });
+    var LINES = en
+      ? ['Stuck at 404, not even an achievement', '0% chance, but an easy platinum', 'The cover never showed up']
+      : ['Застряла на 404, даже ачивку не дали', '0% шанса, зато лёгкая платина', 'Обложка так и не доехала'];
+    function reply(i) {
+      // кролик говорит о том, что игрок сделал сейчас: короткое «печатает» и новая реплика
+      clearTimeout(typingT);
+      say.classList.add('typing');
+      typingT = setTimeout(function () { tx.textContent = LINES[i]; say.classList.remove('typing'); }, still ? 0 : 520);
+      bun.classList.remove('hop'); void bun.offsetWidth; bun.classList.add('hop');
+    }
+    // переворот одним движением (Web Animations): подъём, разворот и посадка без перехватов на ходу; тень у сторон карты.
+    // Кривая симметричная, поэтому ребро карты ровно на середине: тогда и меняется видимая сторона (Safari, см. .stk3)
+    var tilt = { x: 0, y: 0, tx: 0, ty: 0 }, rot = 0, D = 480, E = 'cubic-bezier(.45, .05, .55, .95)';
+    function tf(r, k) { return 'perspective(1600px) rotateY(' + r + 'deg) scale(' + k + ')'; }
+    function turn(done) {
+      var from = rot, to = rot + 180, face = to % 360 === 0;
+      rot = to % 360;
+      if (still) { set('--flip', rot + 'deg'); card.dataset.side = face ? 'face' : 'back'; done(face); return; }
+      tilt.x = tilt.y = tilt.tx = tilt.ty = 0; set('--tx', '0deg'); set('--ty', '0deg');
+      var a = card.animate([{ transform: tf(from, 1) }, { transform: tf(from + 90, 1.08), offset: .5 }, { transform: tf(to, 1) }], { duration: D, easing: E });
+      setTimeout(function () { card.dataset.side = face ? 'face' : 'back'; }, D / 2);
+      a.onfinish = function () {
+        set('--flip', rot + 'deg'); a.cancel();
+        done(face);
+      };
+    }
+    // такт открытия: сдача лицом вверх с погашенным табло 0,08–0,98 с (CSS), табло включается к посадке, шлепок наклейки, кролик (CSS)
+    var T = still ? 0 : 1;
+    setTimeout(power, 820 * T);
+    setTimeout(function () { stk.classList.add('on'); }, 1350 * T);
+    if (!still) { say.classList.add('typing'); typingT = setTimeout(function () { say.classList.remove('typing'); }, 2750); }
+    setTimeout(function () { busy = false; }, 1500 * T);
+    function flip() {
+      if (busy) return;
+      busy = true;
+      s3.classList.add('flipped');
+      turn(function (face) { faceUp = face; busy = false; card.setAttribute('aria-pressed', String(!face)); reply(face ? 2 : 1); });
+    }
+    card.addEventListener('click', flip);
+    card.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); } });
+    card.setAttribute('aria-label', en ? 'Flip the card' : 'Перевернуть карту');
+    // лёгкий наклон к курсору только мышью: цель от курсора, значение плавно догоняет её; на телефоне карта лежит спокойно
+    if (!still && matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      var t3 = document.querySelector('.t3'), raf = 0;
+      var step = function () {
+        raf = 0;
+        if (busy) return;
+        tilt.x += (tilt.tx - tilt.x) * .14; tilt.y += (tilt.ty - tilt.y) * .14;
+        set('--tx', tilt.x.toFixed(2) + 'deg'); set('--ty', tilt.y.toFixed(2) + 'deg');
+        if (Math.abs(tilt.tx - tilt.x) + Math.abs(tilt.ty - tilt.y) > .02) raf = requestAnimationFrame(step);
+      };
+      var kick = function () { if (!raf) raf = requestAnimationFrame(step); };
+      t3.addEventListener('pointermove', function (e) {
+        var r = lay.getBoundingClientRect(), nx = (e.clientX - (r.left + r.width / 2)) / innerWidth, ny = (e.clientY - (r.top + r.height / 2)) / innerHeight;
+        tilt.tx = -ny * 8; tilt.ty = nx * 10; kick();
+      });
+      t3.addEventListener('pointerleave', function () { tilt.tx = tilt.ty = 0; kick(); });
+    }
+  })();
+  if (d.dataset.v !== '2') return;
+
+  /* LED пульта: точки и бегущая строка пиксельным шрифтом игры (глифы 5×7 из src/v4/pixfont.ts) */
+  var G = {
+    A: ['.###.', '#...#', '#...#', '#####', '#...#', '#...#', '#...#'], B: ['####.', '#...#', '#...#', '####.', '#...#', '#...#', '####.'],
+    C: ['.###.', '#...#', '#....', '#....', '#....', '#...#', '.###.'], D: ['####.', '#...#', '#...#', '#...#', '#...#', '#...#', '####.'],
+    E: ['#####', '#....', '#....', '####.', '#....', '#....', '#####'], F: ['#####', '#....', '#....', '####.', '#....', '#....', '#....'],
+    G: ['.###.', '#...#', '#....', '#.###', '#...#', '#...#', '.###.'], H: ['#...#', '#...#', '#...#', '#####', '#...#', '#...#', '#...#'],
+    I: ['###', '.#.', '.#.', '.#.', '.#.', '.#.', '###'], N: ['#...#', '##..#', '#.#.#', '#..##', '#...#', '#...#', '#...#'],
+    O: ['.###.', '#...#', '#...#', '#...#', '#...#', '#...#', '.###.'], P: ['####.', '#...#', '#...#', '####.', '#....', '#....', '#....'],
+    S: ['.####', '#....', '#....', '.###.', '....#', '....#', '####.'], T: ['#####', '..#..', '..#..', '..#..', '..#..', '..#..', '..#..'],
+    U: ['#...#', '#...#', '#...#', '#...#', '#...#', '#...#', '.###.'], Y: ['#...#', '#...#', '.#.#.', '..#..', '..#..', '..#..', '..#..'],
+    K: ['#...#', '#..#.', '#.#..', '##...', '#.#..', '#..#.', '#...#'], M: ['#...#', '##.##', '#.#.#', '#.#.#', '#...#', '#...#', '#...#'],
+    R: ['####.', '#...#', '#...#', '####.', '#.#..', '#..#.', '#...#'], L: ['#....', '#....', '#....', '#....', '#....', '#....', '#####'],
+    X: ['#...#', '#...#', '.#.#.', '..#..', '.#.#.', '#...#', '#...#'],
+    'Й': ['.###.', '.....', '#...#', '#..##', '#.#.#', '##..#', '#...#', '#...#', '#...#'],
+    'И': ['#...#', '#..##', '#.#.#', '##..#', '#...#', '#...#', '#...#'], 'Ц': ['#..#.', '#..#.', '#..#.', '#..#.', '#..#.', '#####', '....#'],
+    'П': ['#####', '#...#', '#...#', '#...#', '#...#', '#...#', '#...#'], 'Л': ['..###', '.#..#', '.#..#', '.#..#', '.#..#', '#...#', '#...#'],
+    'Я': ['.####', '#...#', '#...#', '.####', '..#.#', '.#..#', '#...#'], 'Ы': ['#....#', '#....#', '#....#', '###..#', '#..#.#', '#..#.#', '###..#'],
+    'З': ['.###.', '#...#', '....#', '..##.', '....#', '#...#', '.###.'], 'Ч': ['#...#', '#...#', '#...#', '.####', '....#', '....#', '....#'],
+    'Д': ['..##.', '.#.#.', '.#.#.', '.#.#.', '.#.#.', '#####', '#...#'], 'Г': ['#####', '#....', '#....', '#....', '#....', '#....', '#....'],
+    'Ь': ['#....', '#....', '#....', '####.', '#...#', '#...#', '####.'], 'Ш': ['#.#.#', '#.#.#', '#.#.#', '#.#.#', '#.#.#', '#.#.#', '#####'],
+    'У': ['#...#', '#...#', '#...#', '.####', '....#', '#...#', '.###.'], 'Б': ['#####', '#....', '#....', '####.', '#...#', '#...#', '####.'],
+    '0': ['.###.', '#...#', '#..##', '#.#.#', '##..#', '#...#', '.###.'], '4': ['...#.', '..##.', '.#.#.', '#..#.', '#####', '...#.', '...#.'],
+    '✦': ['..#..', '..#..', '.###.', '#####', '.###.', '..#..', '..#..'], ' ': ['..', '..', '..', '..', '..', '..', '..'], '?': ['.###.', '#...#', '....#', '...#.', '..#..', '.....', '..#..']
+  };
+  [['А', 'A'], ['В', 'B'], ['Е', 'E'], ['К', 'K'], ['М', 'M'], ['Н', 'H'], ['О', 'O'], ['Р', 'P'], ['С', 'C'], ['Т', 'T'], ['Х', 'X']].forEach(function (p) { G[p[0]] = G[p[1]]; });
+  var MSG = (en ? '404 ✦ NO SUCH PAGE ✦ ' : '404 ✦ НЕТ ТАКОЙ СТРАНИЦЫ ✦ ').toUpperCase();
+  var SUB = en ? 'ERR' : 'ОЙ';
+  var cv = document.getElementById('led'), cx = cv.getContext('2d');
+  var still = 'still' in d.dataset, cols, rows, pitch, dpr, sc, big, off = 0, last = 0, W;
+
+  function glyphCols(t, s) { var w = 0; for (var i = 0; i < t.length; i++) { var g = G[t[i]]; if (g) w += g[0].length * s + s; } return w; }
+  function stamp(t, x0, y0, s, set) {
+    var x = x0;
+    for (var i = 0; i < t.length; i++) {
+      var g = G[t[i]]; if (!g) continue; var up = g.length - 7;
+      for (var j = 0; j < g.length; j++) for (var k = 0; k < g[j].length; k++) if (g[j][k] === '#')
+        for (var a = 0; a < s; a++) for (var b = 0; b < s; b++) set(x + k * s + a, y0 + (j - up) * s + b);
+      x += g[0].length * s + s;
+    }
+  }
+  function size() {
+    var bz = cv.parentNode, pad = innerWidth >= 900 ? 36 : 24;
+    var w = Math.max(100, bz.clientWidth - pad), h = Math.max(100, bz.clientHeight - pad);
+    dpr = Math.min(2, devicePixelRatio || 1);
+    cv.style.width = w + 'px'; cv.style.height = h + 'px'; cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+    pitch = innerWidth >= 900 ? 9 : 7.5;
+    cols = Math.floor(w / pitch); rows = Math.floor(h / pitch);
+    // бегущая строка: видно около трёх знаков на телефоне и полторы-две строки слов на ПК
+    big = Math.max(2, Math.min(Math.floor(rows * 0.5 / 7), Math.floor((cols - 6) / 18)));
+    sc = Math.max(2, Math.min(Math.round(big * 0.6), Math.floor(cols / 18)));
+    W = glyphCols(MSG, sc);
+    draw();
+  }
+  function draw() {
+    var on = {};
+    var set = function (x, y) { if (x >= 0 && x < cols && y >= 0 && y < rows) on[x + ',' + y] = 1; };
+    // крупное 404 стоит, под ним бегущая строка; между ними пунктир, как рамка табло
+    var yb = Math.round(rows * 0.31 - 3.5 * big), ym = Math.round(rows * 0.78 - 3.5 * sc), ysep = Math.round((yb + 7 * big + ym - 2 * sc) / 2);
+    stamp('404', Math.round((cols - glyphCols('404', big) + big) / 2), yb, big, set);
+    for (var xx = 3; xx < cols - 3; xx += 2) set(xx, ysep);
+    if (still) stamp(MSG.slice(4), 2, ym, sc, set);
+    else for (var s = -off; s < cols; s += W) stamp(MSG, s, ym, sc, set);
+    // строка состояния сверху маленьким шрифтом, как счёт на табло
+    if (yb >= 12) stamp(SUB, 3, 3, 1, set); // на низком табло (Safari с панелями) строка состояния налезла бы на 404
+    var p = pitch * dpr, r0 = p * 0.34;
+    cx.fillStyle = '#060507'; cx.fillRect(0, 0, cv.width, cv.height);
+    for (var y = 0; y < rows; y++) for (var x = 0; x < cols; x++) {
+      var px = (x + .5) * p, py = (y + .5) * p, l = on[x + ',' + y];
+      cx.beginPath(); cx.arc(px, py, l ? r0 * 1.08 : r0 * .8, 0, 6.2832);
+      cx.fillStyle = l ? (y <= ysep ? '#FF6A2A' : '#FFB23D') : '#1d1410';
+      cx.fill();
+    }
+  }
+  function tick(t) {
+    if (t - last > 70) { last = t; off = (off + 1) % W; draw(); }
+    requestAnimationFrame(tick);
+  }
+  addEventListener('resize', size);
+  size();
+  if (!still) requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>
