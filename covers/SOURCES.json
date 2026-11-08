@@ -841,5 +841,43 @@
   "shotChecked": "2026-11-06",
   "fetched": "2026-11-06",
   "shotFetched": "2026-11-06"
+ },
+ "witcher3-remastered": {
+  "steam": 292030,
+  "name": "The Witcher 3: Wild Hunt — Remastered",
+  "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/dd1c19c4e41b120ddfa35734cc31f79254c25082/library_capsule_2x.jpg?t=1793900434",
+  "hero": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/2dbca4868f3a9912aad6966bb0b6ab2d270f6da6/library_hero_2x.jpg?t=1793900434",
+  "header": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/4b5b1ba5061b8a992cc69ac58b4245434edb4296/header_2x.jpg?t=1793900434",
+  "checked": "2026-11-06",
+  "fetched": "2026-11-06",
+  "shot": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/f7f564ecedd09b3e503b071a637aeefdedbeedd8/ss_f7f564ecedd09b3e503b071a637aeefdedbeedd8.1920x1080.jpg?t=1793900434",
+  "shotFetched": "2026-11-06"
+ },
+ "ac-black-flag": {
+  "steam": 3751950,
+  "name": "Assassin's Creed Black Flag Resynced",
+  "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751950/36a1644b03afce1a648ab90b232196609e827539/library_capsule_2x.jpg?t=1793391152",
+  "hero": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751950/09d7b766ce8a26bce32887ec7eaf00fc36552025/library_hero_2x.jpg?t=1793391152",
+  "header": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751950/8a128a3d00e5c23fd36443876a60e1b6d497fc7b/header_alt_assets_0_2x.jpg?t=1793391152",
+  "checked": "2026-11-06",
+  "fetched": "2026-11-06",
+  "shot": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751950/9553ccbfadad58974d31817949373ce1ac0d8fbf/ss_9553ccbfadad58974d31817949373ce1ac0d8fbf.1920x1080.jpg?t=1793391152",
+  "shotFetched": "2026-11-06"
+ },
+ "queens-domain": {
+  "steam": 1799840,
+  "name": "Queen's Domain",
+  "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1799840/4d7771b253c4fb7601367aeccb62621c3ba7f658/library_capsule_2x.jpg?t=1793628353",
+  "hero": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1799840/library_hero_2x.jpg?t=1793628353",
+  "header": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1799840/1a209734951f53b019ec9fa03f835def14f2a968/header_2x.jpg?t=1793628353",
+  "checked": "2026-11-06",
+  "fetched": "2026-11-06",
+  "shot": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1799840/6b1ab33574516746e03a89afe25226ddb36df16e/ss_6b1ab33574516746e03a89afe25226ddb36df16e.1920x1080.jpg?t=1793628353",
+  "shotCrop": {
+   "top": 0.14,
+   "bottom": 0.14
+  },
+  "note": "На всех скриншотах Steam есть интерфейс, полоса здоровья и подпись срезаны shotCrop.",
+  "shotFetched": "2026-11-06"
  }
 }
