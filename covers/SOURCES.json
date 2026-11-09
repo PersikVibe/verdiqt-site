@@ -879,5 +879,100 @@
   },
   "note": "На всех скриншотах Steam есть интерфейс, полоса здоровья и подпись срезаны shotCrop.",
   "shotFetched": "2026-11-06"
+ },
+ "denshattack": {
+  "steam": 2524850,
+  "name": "Denshattack!",
+  "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2524850/343f1b9244c722dc65938266f31a661d147a4c31/library_capsule_2x.jpg?t=1790601329",
+  "hero": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2524850/c0af69c05aaca71c30c31fcfd4c8f03b66377d83/library_hero_2x.jpg?t=1790601329",
+  "header": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2524850/9e82089d034705eaa84ecb130d04ed1084ce574c/header_2x.jpg?t=1790601329",
+  "checked": "2026-11-09",
+  "note": "Добавлено 09.11.2026 при доборе игр сезона.",
+  "shot": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2524850/44bdd3b310abcc043cdb68defb10cea7493f11fb/ss_44bdd3b310abcc043cdb68defb10cea7493f11fb.jpg?t=1790601329",
+  "shotFrom": "Steam IStoreBrowseService, скриншот 5 из 13, без интерфейса",
+  "shotFocus": [
+   0.5,
+   0.45
+  ],
+  "shotChecked": "2026-11-09",
+  "fetched": "2026-11-09",
+  "shotFetched": "2026-11-09"
+ },
+ "titanium-court": {
+  "steam": 2364580,
+  "name": "Titanium Court",
+  "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2364580/ec1d62906afd236b57d69e2cf24bd4b80a08ffeb/library_capsule_2x.jpg?t=1790726458",
+  "hero": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2364580/13b8232c44a7e272aa94fe555657d825aad3a937/library_hero_2x.jpg?t=1790726458",
+  "header": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2364580/e7bc5cb46a5594994b821d92b475ca6327ee11d6/header_2x.jpg?t=1790726458",
+  "checked": "2026-11-09",
+  "note": "Добавлено 09.11.2026 при доборе игр сезона.",
+  "shot": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2364580/9793c1119d6c2d4902ec3491a00fee3dd6fbf23d/ss_9793c1119d6c2d4902ec3491a00fee3dd6fbf23d.jpg?t=1790726458",
+  "shotFrom": "Steam IStoreBrowseService, скриншот 8 из 12, pixel-арт, кадр с персонажем, интерфейс по краям срезан окном",
+  "shotFocus": [
+   0.5,
+   0.35
+  ],
+  "shotChecked": "2026-11-09",
+  "fetched": "2026-11-09",
+  "shotFetched": "2026-11-09",
+  "shotOff": "все скриншоты Steam это интерфейс с текстом, он лезет под цифру оборота; на обороте широкий арт (09.11, сессия добора игр)"
+ },
+ "mermaid-mask": {
+  "steam": 1696770,
+  "name": "The Mermaid Mask",
+  "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1696770/library_600x900_2x.jpg?t=1793636555",
+  "hero": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1696770/library_hero_2x.jpg?t=1793636555",
+  "header": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1696770/7fb7b905c4004e882bc7671e55507acadc5cd5bb/header_2x.jpg?t=1793636555",
+  "checked": "2026-11-09",
+  "note": "Добавлено 09.11.2026 при доборе игр сезона.",
+  "shot": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1696770/6f3e03f3186b400b1e8bb739b03dd954f77eae74/ss_6f3e03f3186b400b1e8bb739b03dd954f77eae74.jpg?t=1793636555",
+  "shotFrom": "Steam IStoreBrowseService, скриншот 9 из 13, без интерфейса, кроме иконок в углах",
+  "shotFocus": [
+   0.5,
+   0.4
+  ],
+  "shotChecked": "2026-11-09",
+  "fetched": "2026-11-09",
+  "shotFetched": "2026-11-09"
+ },
+ "opus-prism-peak": {
+  "steam": 1947910,
+  "name": "OPUS: Prism Peak",
+  "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1947910/6f0761443e78b49aeb74cd5695b53f47ff334695/library_capsule_2x.jpg?t=1793946245",
+  "hero": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1947910/f015432feb53b03dbd1272e4cd2356d7204c0f35/library_hero_2x.jpg?t=1793946245",
+  "header": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1947910/582757238952893925e0fd0f99167e92cd69805b/header_2x.jpg?t=1793946245",
+  "checked": "2026-11-09",
+  "note": "Добавлено 09.11.2026 при доборе игр сезона.",
+  "shot": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1947910/4e27eb586a2b261fd507618b3833d115eda29d78/ss_4e27eb586a2b261fd507618b3833d115eda29d78.jpg?t=1793946245",
+  "shotFrom": "Steam IStoreBrowseService, скриншот 1 из 12, без интерфейса",
+  "shotFocus": [
+   0.6,
+   0.45
+  ],
+  "shotChecked": "2026-11-09",
+  "fetched": "2026-11-09",
+  "shotFetched": "2026-11-09"
+ },
+ "zero-parades": {
+  "steam": 2863680,
+  "name": "ZERO PARADES: Director's Cut",
+  "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2863680/0c448e145fd44cb541a8ee4d4e4925b4c7a816cf/library_capsule_2x.jpg?t=1790856627",
+  "hero": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2863680/72006259809d439f061d06e3249b6f06529a944d/library_hero_2x.jpg?t=1790856627",
+  "header": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2863680/54018bd8ff78f17e7bfd691dadade1602938b8e8/header_2x.jpg?t=1790856627",
+  "checked": "2026-11-09",
+  "note": "Добавлено 09.11.2026 при доборе игр сезона.",
+  "shot": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2863680/bd59f4ca54532108f4588d0fe32690ec8daa6bdc/ss_bd59f4ca54532108f4588d0fe32690ec8daa6bdc.jpg?t=1790856627",
+  "shotFrom": "Steam IStoreBrowseService, скриншот 9 из 12, нижняя плашка интерфейса срезана",
+  "shotFocus": [
+   0.6,
+   0.45
+  ],
+  "shotCrop": {
+   "top": 0,
+   "bottom": 0.15
+  },
+  "shotChecked": "2026-11-09",
+  "fetched": "2026-11-09",
+  "shotFetched": "2026-11-09"
  }
 }
