@@ -42,10 +42,10 @@
   .upd { font-size: 13px; color: var(--mute); }
 </style>
   <link rel="preconnect" href="https://oomdnatdmdknuebyefdo.supabase.co" crossorigin>
-  <link rel="modulepreload" href="./assets/startpult-XN9s741H.js" crossorigin>
+  <link rel="modulepreload" href="./assets/startpult-DwmAzrvA.js" crossorigin>
   <link rel="modulepreload" href="./assets/barcolor-IJT6LrCj.js" crossorigin>
   <link rel="modulepreload" href="./assets/startmetrics-BgLAF0Hz.js" crossorigin>
-  <link rel="modulepreload" href="./assets/pult3d-Cy01Etjs.js" crossorigin>
+  <link rel="modulepreload" href="./assets/pult3d-Bla_9Ovs.js" crossorigin>
   <link rel="modulepreload" href="./assets/RectAreaLightUniformsLib-CttvAlPm.js" crossorigin>
   <link rel="preload" as="fetch" href="./pult/pult.json" crossorigin>
   <link rel="preload" as="fetch" href="./pult2/pult3d.json" crossorigin>
@@ -86,6 +86,7 @@
           <li><b>Прогноз и анонимный ключ</b> браузера: чтобы игра работала, карточка открывалась по ссылке и сравнивалась с остальными. Аккаунта, настоящего имени и телефона не спрашиваем.</li>
           <li><b>Имя на карточке и росчерк</b>: только твой текст и твой рисунок.</li>
           <li><b>Почта</b>, только если её оставили: два письма, в день номинантов и в ночь шоу. Никаких рассылок. Отписаться можно ссылкой в письме или письмом нам.</li>
+          <li><b>Номер чата Telegram</b>, только если нажали «Результат в Telegram» и «Старт» в боте: чтобы бот прислал два сообщения со ссылкой на твой прогноз, в день номинантов и в ночь шоу. Имя, ник и телефон из Telegram не храним. Отписаться: команда /stop в боте.</li>
           <li><b>Отзыв</b>, только если его оставили: реакция на игру или текст о поломке, к тексту прикрепляются браузер и размер окна. Храним не дольше 13 месяцев. Личное туда лучше не писать.</li>
           <li><b>Счётчики пути</b> (открыл, начал, выбрал, запечатал, поделился), <b>страна</b> двумя буквами и <b>сайт, с которого пришёл</b> (только домен, без адреса страницы): чтобы понимать, где игра не открывается и что улучшить. Без сторонней аналитики и рекламных трекеров.</li>
           <li><b>IP-адрес</b> в данных игры не храним в открытом виде: для защиты от спама и лимитов берём его хеш. Сервис входа Supabase хранит адрес и тип браузера к анонимному ключу, пока эта сессия жива; журнал входов чистим через 30 дней. Площадки держат адрес в технических логах по своим правилам, обычно до 30 дней.</li>
@@ -96,9 +97,9 @@
       <section class="box quiet">
         <h2>Где хранится и сколько</h2>
         <ul>
-          <li>Сервер игры: Supabase, регион Франкфурт (ЕС). Сайт: GitHub Pages. Запасной путь к серверу для тех, у кого прямой не работает: Vercel (США), содержимое запросов там не хранится. Письма отправляет сервис рассылки Resend.</li>
+          <li>Сервер игры: Supabase, регион Франкфурт (ЕС). Сайт: GitHub Pages. Запасной путь к серверу для тех, у кого прямой не работает: Vercel (США), содержимое запросов там не хранится. Письма отправляет сервис рассылки Resend, сообщения бота идут через Telegram.</li>
           <li>Эти сервисы видят данные только для того, чтобы игра работала и письма доходили. Больше никому не передаём, не продаём и не используем для рекламы.</li>
-          <li>Почту удаляем после декабрьского письма, не позже 31 декабря 2026. Прогнозы и карточки храним до конца 2027 года, чтобы ссылки-вызовы работали и после шоу. Счётчики пути не дольше 13 месяцев.</li>
+          <li>Почту и номер чата Telegram удаляем после декабрьского письма и сообщения, не позже 31 декабря 2026. Прогнозы и карточки храним до конца 2027 года, чтобы ссылки-вызовы работали и после шоу. Счётчики пути не дольше 13 месяцев.</li>
         </ul>
       </section>
 
@@ -145,6 +146,7 @@
           <li><b>Your prediction and an anonymous browser key</b>: so the game works, your card opens by link and compares with the crowd. We do not ask for an account, your real name or a phone number.</li>
           <li><b>The name on the card and the signature</b>: only your text and your drawing.</li>
           <li><b>Email</b>, only if you left it: two emails, on nominees day and on show night. No newsletters. Unsubscribe with the link in the email or by writing to us.</li>
+          <li><b>Telegram chat number</b>, only if you tapped "My result on Telegram" and Start in the bot: so the bot can send two messages with a link to your prediction, on nominees day and on show night. We do not store your Telegram name, username or phone. Unsubscribe with the /stop command in the bot.</li>
           <li><b>Feedback</b>, only if you left it: your reaction to the game or a note about a bug, with browser type and window size attached to the note. Kept for up to 13 months. Please keep personal details out of it.</li>
           <li><b>Funnel counters</b> (opened, started, picked, sealed, shared), your <b>country</b> as two letters and the <b>site you came from</b> (domain only, no page address): to see where the game does not load and what to improve. No third-party analytics, no ad trackers.</li>
           <li><b>IP address</b> is not stored in plain form in the game data: we use a hash of it for spam protection and rate limits. The Supabase sign-in service keeps the address and browser type with the anonymous key while that session is active; the sign-in log is cleared after 30 days. Hosting providers keep the address in technical logs under their own rules, usually up to 30 days.</li>
@@ -155,9 +157,9 @@
       <section class="box quiet">
         <h2>Where it lives and for how long</h2>
         <ul>
-          <li>Game server: Supabase, Frankfurt region (EU). Website: GitHub Pages. Backup route to the server for people whose direct route fails: Vercel (US), request content is not stored there. Emails are sent by the Resend email service.</li>
+          <li>Game server: Supabase, Frankfurt region (EU). Website: GitHub Pages. Backup route to the server for people whose direct route fails: Vercel (US), request content is not stored there. Emails are sent by the Resend email service, bot messages go through Telegram.</li>
           <li>These services see data only so the game works and emails arrive. We do not share it with anyone else, sell it or use it for ads.</li>
-          <li>Emails are deleted after the December email, by December 31, 2026. Predictions and cards are kept until the end of 2027 so challenge links keep working after the show. Funnel counters are kept for up to 13 months.</li>
+          <li>Emails and Telegram chat numbers are deleted after the December email and message, by December 31, 2026. Predictions and cards are kept until the end of 2027 so challenge links keep working after the show. Funnel counters are kept for up to 13 months.</li>
         </ul>
       </section>
 
