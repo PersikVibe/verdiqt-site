@@ -1,17 +1,20 @@
 {
   "event": "tga-2026",
-  "status": "pending",
-  "nomineesAt": null,
+  "status": "nominees",
+  "nomineesAt": "2026-11-17T17:00:00Z",
   "winnersAt": null,
   "categories": {
-    "action": { "nominees": [], "winner": null },
-    "adventure": { "nominees": [], "winner": null },
-    "indie": { "nominees": [], "winner": null },
-    "rpg": { "nominees": [], "winner": null },
-    "score": { "nominees": [], "winner": null },
-    "goty": { "nominees": [], "winner": null }
+    "action": { "nominees": ["ace-combat-8", "gears-e-day", "onimusha", "phantom-blade-zero", "saros"], "winner": null },
+    "adventure": { "nominees": ["007-first-light", "control-resonant", "gta6", "pragmata", "re-requiem", "zelda-oot"], "winner": null },
+    "indie": { "nominees": ["big-walk", "cairn", "denshattack", "mewgenics", "mina"], "winner": null },
+    "rpg": { "nominees": ["ff-resonance", "fe-fortunes-weave", "mh-stories-3", "dawnwalker", "trails-sky-2"], "winner": null },
+    "score": { "nominees": ["ace-combat-8", "gta6", "mixtape", "phantom-blade-zero", "zelda-oot"], "winner": null },
+    "goty": { "nominees": ["007-first-light", "control-resonant", "gta6", "phantom-blade-zero", "re-requiem", "zelda-oot"], "winner": null }
   },
-  "nominees": [],
+  "crowd": {
+    "nominees": { "hits": [2, 5, 21, 40, 33, 12, 5], "total": 118 }
+  },
+  "nominees": ["007-first-light", "control-resonant", "gta6", "phantom-blade-zero", "re-requiem", "zelda-oot"],
   "goldenJoystickWinner": null,
   "_about": "Памятка на вечер номинантов: launch/stage2-2026-11-16.md. Итоги The Game Awards 2026 для развязки. 17.11: вписать номинантов каждой номинации в nominees (id из data/contenders-2026.json, для игр вне пула просто название), поставить status: nominees и nomineesAt. 10.12: вписать winner по мере объявления и поставить status: winners. Необязательный блок crowd: { nominees: { hits: [n0..n6] }, winners: { hits: [n0..n6] } } с распределением попаданий по всем прогнозам (считается SQL-запросом раз после заморозки), даёт строку «точнее N% прогнозов». Пример заполнения: results-early-2026.sample.json."
 }
