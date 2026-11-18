@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ECEBF0">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>Verdiqt · отписка</title>
+<link rel="icon" type="image/svg+xml" href="./logo/verdiqt-q.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="./logo/verdiqt-q-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./logo/verdiqt-q-180-bg.png">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+  /* страница отписки из письма (18.11): та же светлая студия и карточка, что у правил (legal.html) */
+  :root { --bg: #ECEBF0; --ink: #14131A; --mute: #5E5C66; --acc: #FF5A1F; --paper: #fff; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { background: var(--bg); color: var(--ink); font-family: 'Onest', 'Roboto Flex', system-ui, sans-serif; font-size: 17px; line-height: 1.55;
+    padding: 28px max(16px, env(safe-area-inset-left, 0px)) 80px max(16px, env(safe-area-inset-right, 0px)); }
+  .wrap { max-width: 560px; margin: 0 auto; display: grid; gap: 28px; }
+  .brand { display: inline-flex; align-items: center; text-decoration: none; color: var(--ink); }
+  .brand img { display: block; height: 33px; width: auto; }
+  h1 { margin: 0; font-family: 'Tektur', 'Onest', sans-serif; font-size: clamp(34px, 8vw, 52px); font-weight: 800; line-height: .98; letter-spacing: 0; }
+  p { margin: 0; }
+  .box { display: grid; gap: 14px; padding: 22px 22px 24px; background: var(--paper); border-radius: 8px; box-shadow: 0 0 0 2px var(--ink), 6px 6px 0 var(--acc); }
+  .mute { color: var(--mute); font-size: 14.5px; }
+  .btn { justify-self: start; display: inline-block; margin-top: 4px; padding: 13px 20px 12px; border-radius: 8px; background: var(--ink); color: #fff;
+    font-weight: 800; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; }
+  .btn:focus-visible { outline: 3px solid var(--acc); outline-offset: 3px; }
+  a { color: var(--ink); }
+  [data-s] { display: none; }
+  html[data-state="wait"] [data-s="wait"], html[data-state="done"] [data-s="done"],
+  html[data-state="bad"] [data-s="bad"], html[data-state="net"] [data-s="net"] { display: grid; }
+</style>
+  <script type="module" crossorigin src="./assets/u-6mezvy1n.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-B5Qt9EMX.js">
+</head>
+<body>
+<main class="wrap">
+  <a class="brand" href="./" aria-label="Verdiqt"><img src="./logo/verdiqt-dark.svg" alt="Verdiqt" width="128" height="33"></a>
+  <div aria-live="polite">
+    <section class="box" data-s="wait"><h1 data-t="wait_h"></h1></section>
+    <section class="box" data-s="done"><h1 data-t="done_h"></h1><p data-t="done_p"></p><a class="btn" data-home data-t="home"></a></section>
+    <section class="box" data-s="bad"><h1 data-t="bad_h"></h1><p data-t="bad_p"></p><a class="btn" data-home data-t="home"></a></section>
+    <section class="box" data-s="net"><h1 data-t="net_h"></h1><p data-t="net_p"></p></section>
+  </div>
+  <p class="mute" data-t="foot"></p>
+</main>
+</body>
+</html>
