@@ -1,5 +1,5 @@
 {
- "_about": "Источники обложек и широкого арта. Поля: steam (app id), cover (портрет 2:3, лучше library_capsule_2x или library_600x900_2x, 1200×1800), hero (library_hero_2x 3840×1240 или library_hero 1920×620), header (header_2x), checked (дата, когда URL подтверждён через Steam API IStoreBrowseService), fetched (дата, когда файл скачан и собран скриптом scripts/covers.mjs), note. Пути с хэшем живут, пока издатель не заменит арт: тогда `node scripts/covers.mjs steam` обновит их. Для игр без Steam поле page: официальная страница магазина или пресс-материалы, откуда брать ключевой арт вручную или через og:image. Кадр для оборота карты: shot (URL официального скриншота, Steam appdetails path_full или галерея магазина/сайта), shotFrom (откуда и какой по счёту), shotCrop (доли кадра, срезаемые сверху/снизу: полосы кино и плашки интерфейса), shotChecked; собирает node scripts/covers.mjs shots.",
+ "_about": "Источники обложек и широкого арта. Поля: steam (app id), cover (портрет 2:3, лучше library_capsule_2x или library_600x900_2x, 1200×1800), hero (library_hero_2x 3840×1240 или library_hero 1920×620), header (header_2x), checked (дата, когда URL подтверждён через Steam API IStoreBrowseService), fetched (дата, когда файл скачан и собран скриптом scripts/covers.mjs), note. Пути с хэшем живут, пока издатель не заменит арт: тогда `node scripts/covers.mjs steam` обновит их. Для игр без Steam поле page: официальная страница магазина или пресс-материалы, откуда брать ключевой арт вручную или через og:image. Кадр для оборота карты: shot (URL официального скриншота, Steam appdetails path_full или галерея магазина/сайта), shotFrom (откуда и какой по счёту), shotCrop (доли кадра, срезаемые сверху/снизу: полосы кино и плашки интерфейса), shotChecked; собирает node scripts/covers.mjs shots. Живой оборот (проба 20.11): loop ({steam, movie} или {youtube}, at, crop, from, checked, fetched), собирает node scripts/loops.mjs в covers/<id>-loop.mp4.",
  "gta6": {
   "page": "https://www.rockstargames.com/VI",
   "note": "Официальная обложка показана Rockstar 18.06.2026, доступна для скачивания на rockstargames.com/VI (раздел загрузок). Пресс-материалы: Rockstar Newswire. Steam нет (ПК не объявлен). 26.10 (раунд 12, общее п. 1): обложка заменена на официальную в высоком разрешении (прежняя была мыльной, lowres).",
@@ -16,7 +16,45 @@
   ],
   "cover": "https://www.rockstargames.com/VI/_next/static/media/GTAVI_FOB_StandardEdition_Desktop.09clbpu8-nv8i.jpg",
   "coverFrom": "https://www.rockstargames.com/VI (официальная обложка коробки, Standard Edition, 2160×2700)",
-  "coverChecked": "2026-10-26"
+  "coverChecked": "2026-10-26",
+  "loop": {
+   "youtube": "8L0CzL2V72c",
+   "from": "YouTube PlayStation, Grand Theft Auto VI Features Trailer (геймплей PS5): 0:43 Лусия прыгает над Вайс-Сити, 0:09 переворот внедорожника, 0:12 Лусия в спортзале",
+   "parts": [
+    {
+     "at": 43.75,
+     "len": 1.7,
+     "crop": [
+      1080,
+      900,
+      420,
+      60
+     ]
+    },
+    {
+     "at": 9,
+     "len": 2.2,
+     "crop": [
+      1080,
+      900,
+      420,
+      60
+     ]
+    },
+    {
+     "at": 12.5,
+     "len": 1.6,
+     "crop": [
+      1296,
+      1080,
+      312,
+      0
+     ]
+    }
+   ],
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
+  }
  },
  "re-requiem": {
   "steam": 3764200,
@@ -33,7 +71,46 @@
   "shotFocus": [
    0.6,
    0.33
-  ]
+  ],
+  "loop": {
+   "steam": 3764200,
+   "movie": 257250473,
+   "from": "Steam, Resident Evil Requiem PV3: 1:37 Грейс с пистолетом, 3:11 Леон, 3:14 бой в коридоре",
+   "parts": [
+    {
+     "at": 97.4,
+     "len": 2.3,
+     "crop": [
+      1080,
+      900,
+      420,
+      0
+     ]
+    },
+    {
+     "at": 191.75,
+     "len": 1.75,
+     "crop": [
+      1080,
+      900,
+      420,
+      0
+     ]
+    },
+    {
+     "at": 194.75,
+     "len": 1.45,
+     "crop": [
+      1080,
+      900,
+      420,
+      90
+     ]
+    }
+   ],
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
+  }
  },
  "phantom-blade-zero": {
   "steam": 4115450,
@@ -51,7 +128,21 @@
    0.55,
    0.25
   ],
-  "shotOff": "Владимир 24.10: на обороте остаётся широкий арт"
+  "shotOff": "Владимир 24.10: на обороте остаётся широкий арт",
+  "loop": {
+   "steam": 4115450,
+   "movie": 257249813,
+   "at": 200,
+   "crop": [
+    864,
+    720,
+    528,
+    330
+   ],
+   "from": "Steam, Year of the Snake Gameplay Trailer, 3:20, бой в горящем лагере",
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
+  }
  },
  "control-resonant": {
   "steam": 3669870,
@@ -68,7 +159,56 @@
   "shotFocus": [
    0.62,
    0.32
-  ]
+  ],
+  "loop": {
+   "steam": 3669870,
+   "movie": 257286362,
+   "from": "Steam, CONTROL Resonant Gameplay Trailer: 2:43 улица к светящейся башне, 2:57 и 3:02 Резонант в луче света",
+   "parts": [
+    {
+     "at": 162.9,
+     "len": 2.6,
+     "crop": [
+      1080,
+      900,
+      420,
+      40
+     ]
+    },
+    {
+     "at": 176.95,
+     "len": 1.3,
+     "crop": [
+      960,
+      800,
+      480,
+      230
+     ]
+    },
+    {
+     "at": 178.3,
+     "len": 0.8,
+     "crop": [
+      960,
+      800,
+      480,
+      140
+     ]
+    },
+    {
+     "at": 182.4,
+     "len": 0.8,
+     "crop": [
+      960,
+      800,
+      480,
+      230
+     ]
+    }
+   ],
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
+  }
  },
  "pragmata": {
   "steam": 3357650,
@@ -86,7 +226,20 @@
    0.62,
    0.25
   ],
-  "shotOff": "Владимир 24.10: на обороте остаётся широкий арт"
+  "shotOff": "Владимир 24.10: на обороте остаётся широкий арт",
+  "loop": {
+   "youtube": "cWBdELprqqk",
+   "at": 159.3,
+   "crop": [
+    1080,
+    900,
+    420,
+    100
+   ],
+   "from": "YouTube IGN, Pragmata Official Gameplay Trailer TGS 2025 (ролик Capcom, 4K), 2:39, Диана крупно; субтитры под плашкой",
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
+  }
  },
  "saros": {
   "page": "https://www.playstation.com/games/saros/",
@@ -104,7 +257,20 @@
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202509/2318/89c3538003fb34870e745493412408eeeed5f02b32c55d23.png",
   "coverFrom": "https://store.playstation.com/en-us/concept/10005069 (PlayStation Store, PORTRAIT_BANNER стандартного издания, 1440×2160)",
   "coverChecked": "2026-10-26",
-  "fetched": "2026-10-26"
+  "fetched": "2026-10-26",
+  "loop": {
+   "youtube": "XtCS5tuvCKs",
+   "at": 171,
+   "crop": [
+    768,
+    640,
+    576,
+    420
+   ],
+   "from": "YouTube PlayStation, Saros Gameplay Reveal Trailer, 2:51, бой со щитом; в Steam игры нет",
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
+  }
  },
  "007-first-light": {
   "steam": 3768760,
@@ -121,7 +287,86 @@
   "shotFocus": [
    0.6,
    0.2
-  ]
+  ],
+  "loop": {
+   "steam": 3768760,
+   "movie": 257345028,
+   "from": "Steam, 007 First Light: Story Trailer 1:10 блондинка в красном платье; Gameplay Trailer 0:03 взрыв у укрытия, 0:04 бег от взрыва, 1:13 и 1:16 погоня на Aston Martin, 1:06 драка у бильярда",
+   "parts": [
+    {
+     "at": 69.85,
+     "len": 1.35,
+     "crop": [
+      864,
+      720,
+      600,
+      220
+     ]
+    },
+    {
+     "steam": 3768760,
+     "movie": 257345966,
+     "at": 3.78,
+     "len": 0.78,
+     "crop": [
+      864,
+      720,
+      528,
+      230
+     ]
+    },
+    {
+     "steam": 3768760,
+     "movie": 257345966,
+     "at": 4.65,
+     "len": 0.78,
+     "crop": [
+      864,
+      720,
+      528,
+      230
+     ]
+    },
+    {
+     "steam": 3768760,
+     "movie": 257345966,
+     "at": 72.95,
+     "len": 1,
+     "crop": [
+      720,
+      600,
+      600,
+      350
+     ]
+    },
+    {
+     "steam": 3768760,
+     "movie": 257345966,
+     "at": 75.75,
+     "len": 0.87,
+     "crop": [
+      720,
+      600,
+      600,
+      350
+     ]
+    },
+    {
+     "steam": 3768760,
+     "movie": 257345966,
+     "at": 66.4,
+     "len": 0.72,
+     "crop": [
+      864,
+      720,
+      528,
+      230
+     ]
+    }
+   ],
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
+  }
  },
  "forza-horizon-6": {
   "steam": 2483190,
@@ -155,7 +400,20 @@
   "shotFocus": [
    0.56,
    0.3
-  ]
+  ],
+  "loop": {
+   "youtube": "mjDbYpNrFjI",
+   "at": 540,
+   "crop": [
+    960,
+    800,
+    530,
+    150
+   ],
+   "from": "YouTube Capcom USA, Event Demo Playthrough, 9:00, дуэль с Сасаки Гандзюро; окно шире и ниже, головы целиком",
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
+  }
  },
  "pokopia": {
   "page": "https://www.nintendo.com/us/store/products/pokemon-pokopia-switch-2/",
@@ -186,7 +444,20 @@
   "shotFocus": [
    0.42,
    0.3
-  ]
+  ],
+  "loop": {
+   "youtube": "_RaZiSBaJfU",
+   "at": 575,
+   "crop": [
+    768,
+    640,
+    576,
+    300
+   ],
+   "from": "YouTube Nintendo of America, Fortune's Weave Direct 8.4.2026, 9:35, боевая анимация на арене; в Steam игры нет",
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
+  }
  },
  "trails-sky-2": {
   "steam": 4225980,
@@ -207,6 +478,19 @@
   "shotCrop": {
    "top": 0.085,
    "bottom": 0.085
+  },
+  "loop": {
+   "youtube": "09CpH5vaZKM",
+   "at": 58,
+   "crop": [
+    768,
+    640,
+    576,
+    220
+   ],
+   "from": "YouTube GungHo, Trails in the Sky 2nd Chapter Gameplay Trailer, 0:58, бой с боссом; в Steam ролики с надписями",
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
   }
  },
  "crimson-desert": {
@@ -258,7 +542,76 @@
   "shotFocus": [
    0.57,
    0.3
-  ]
+  ],
+  "loop": {
+   "steam": 3751260,
+   "movie": 257422857,
+   "from": "Steam, The Blood of Dawnwalker Launch Trailer: 0:53 рывок, 0:54 бой в долине, 0:59 драка в таверне, 1:04 ночная драка",
+   "parts": [
+    {
+     "at": 52.85,
+     "len": 1.25,
+     "crop": [
+      1080,
+      900,
+      420,
+      90
+     ]
+    },
+    {
+     "at": 54.12,
+     "len": 1.28,
+     "crop": [
+      1080,
+      900,
+      420,
+      90
+     ]
+    },
+    {
+     "at": 55.42,
+     "len": 0.53,
+     "crop": [
+      1080,
+      900,
+      420,
+      90
+     ]
+    },
+    {
+     "at": 59.6,
+     "len": 1.03,
+     "crop": [
+      1080,
+      900,
+      420,
+      90
+     ]
+    },
+    {
+     "at": 64.6,
+     "len": 0.77,
+     "crop": [
+      1080,
+      900,
+      420,
+      90
+     ]
+    },
+    {
+     "at": 65.39,
+     "len": 0.64,
+     "crop": [
+      1080,
+      900,
+      420,
+      90
+     ]
+    }
+   ],
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
+  }
  },
  "silent-hill-townfall": {
   "steam": 1636440,
@@ -314,7 +667,36 @@
    0.45,
    0.3
   ],
-  "shotOff": "Владимир 24.10: на обороте остаётся широкий арт"
+  "shotOff": "Владимир 24.10: на обороте остаётся широкий арт",
+  "loop": {
+   "steam": 3010850,
+   "movie": 257353899,
+   "from": "Steam, Gears of War: E-Day Gameplay Reveal Trailer: 0:44 боец с Лансером-бензопилой, 1:28 Маркус с отрядом",
+   "parts": [
+    {
+     "at": 44.3,
+     "len": 2,
+     "crop": [
+      1200,
+      1000,
+      360,
+      0
+     ]
+    },
+    {
+     "at": 87.6,
+     "len": 3.5,
+     "crop": [
+      1200,
+      1000,
+      360,
+      0
+     ]
+    }
+   ],
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
+  }
  },
  "metroid-prime-4": {
   "page": "https://www.nintendo.com/us/store/products/metroid-prime-4-beyond-switch/",
@@ -346,7 +728,20 @@
   "shotFocus": [
    0.2,
    0.3
-  ]
+  ],
+  "loop": {
+   "youtube": "XYBcV3AnTHA",
+   "at": 1395,
+   "crop": [
+    640,
+    533,
+    730,
+    290
+   ],
+   "from": "YouTube Yacht Club Games, Mina the Hollower Developer Demo Stream, 23:15, Мина с камнем в зале с врагами, героиня в верхней половине окна; только окно игры. В роликах Steam план не длиннее 3 с",
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
+  }
  },
  "big-walk": {
   "steam": 1478500,
@@ -363,7 +758,15 @@
   "shotFocus": [
    0.62,
    0.45
-  ]
+  ],
+  "loop": {
+   "steam": 1478500,
+   "movie": 257347620,
+   "at": 186.5,
+   "from": "Steam, Release Date Trailer, 3:06.5, рассвет на пляже, после субтитров",
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
+  }
  },
  "mewgenics": {
   "steam": 686060,
@@ -381,7 +784,15 @@
    0.52,
    0.45
   ],
-  "shotZoom": 0.8
+  "shotZoom": 0.8,
+  "loop": {
+   "steam": 686060,
+   "movie": 257153663,
+   "at": 6.2,
+   "from": "Steam, Mewgenics Release Date Trailer, 0:06.2, три плана боя подряд без надписей (плана боя длиннее 2,5 с нет ни в Steam, ни в роликах разработчика без цитат)",
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
+  }
  },
  "mixtape": {
   "steam": 2582320,
@@ -398,7 +809,21 @@
   "shotFocus": [
    0.42,
    0.3
-  ]
+  ],
+  "loop": {
+   "steam": 2582320,
+   "movie": 257327675,
+   "at": 37,
+   "crop": [
+    960,
+    800,
+    480,
+    140
+   ],
+   "from": "Steam, Mixtape Launch Trailer, 0:37, три героини в торговом центре; окно внутри кинорамки",
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
+  }
  },
  "dave-jungle": {
   "steam": 1868140,
@@ -491,7 +916,15 @@
   "shotFocus": [
    0.48,
    0.38
-  ]
+  ],
+  "loop": {
+   "steam": 1588550,
+   "movie": 257275549,
+   "at": 83.5,
+   "from": "Steam, Cairn - Launch trailer, 1:23.5, подъём в сумерках",
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
+  }
  },
  "marathon": {
   "steam": 3065800,
@@ -635,7 +1068,20 @@
   "shotFocus": [
    0.6,
    0.35
-  ]
+  ],
+  "loop": {
+   "youtube": "ThW46nJkl7I",
+   "at": 147,
+   "crop": [
+    768,
+    640,
+    576,
+    300
+   ],
+   "from": "YouTube PlayStation, Monster Hunter Stories 3 Introduction Video, 2:27, полёт верхом на монстре",
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
+  }
  },
  "scott-pilgrim-ex": {
   "steam": 2640950,
@@ -719,7 +1165,20 @@
   "shotFocus": [
    0.52,
    0.28
-  ]
+  ],
+  "loop": {
+   "youtube": "PQvD3p2yGwc",
+   "at": 845.5,
+   "crop": [
+    672,
+    560,
+    664,
+    520
+   ],
+   "from": "YouTube Nintendo of America, Mr. Aonuma Gameplay Demonstration, 14:05, Линк и жеребёнок Эпоны на ранчо Лон Лон на закате",
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
+  }
  },
  "mythmatch": {
   "steam": 1778050,
@@ -791,7 +1250,45 @@
   "shotChecked": "2026-10-29",
   "note": "Добавлено 29.10.2026 при пересмотре лонг-листов.",
   "fetched": "2026-10-29",
-  "shotFetched": "2026-10-29"
+  "shotFetched": "2026-10-29",
+  "loop": {
+   "youtube": "Et8rk49L8xw",
+   "from": "YouTube PlayStation, Final Fantasy Resonance Demo Trailer: 1:18 призыв с крыльями, 0:45 феникс, 1:14 остров",
+   "parts": [
+    {
+     "at": 78.9,
+     "len": 2.6,
+     "crop": [
+      1080,
+      900,
+      420,
+      0
+     ]
+    },
+    {
+     "at": 45.6,
+     "len": 1.6,
+     "crop": [
+      1080,
+      900,
+      420,
+      90
+     ]
+    },
+    {
+     "at": 74.95,
+     "len": 1.3,
+     "crop": [
+      1080,
+      900,
+      420,
+      90
+     ]
+    }
+   ],
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
+  }
  },
  "cod-mw4": {
   "steam": 4435490,
@@ -827,7 +1324,20 @@
   "shotChecked": "2026-10-29",
   "note": "Добавлено 29.10.2026 при пересмотре лонг-листов.",
   "fetched": "2026-10-29",
-  "shotFetched": "2026-10-29"
+  "shotFetched": "2026-10-29",
+  "loop": {
+   "youtube": "CYfiKmFMvEY",
+   "at": 229,
+   "crop": [
+    768,
+    640,
+    576,
+    420
+   ],
+   "from": "YouTube Bandai Namco, Online 101 Trailer, 3:49, F-22 со спины в полёте; в трейлерах Steam полёт только склейками по 1–2 с",
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
+  }
  },
  "tiny-eden": {
   "steam": 3375110,
@@ -896,7 +1406,20 @@
   ],
   "shotChecked": "2026-11-09",
   "fetched": "2026-11-09",
-  "shotFetched": "2026-11-09"
+  "shotFetched": "2026-11-09",
+  "loop": {
+   "youtube": "ZKVa2pMYCtg",
+   "at": 155,
+   "crop": [
+    1224,
+    1020,
+    348,
+    60
+   ],
+   "from": "YouTube PlayStation, Denshattack! - Boss Fight Gameplay Reveal, 2:35; в Steam только нарезки по 1–2 с. Интерфейс по краям срезан окном",
+   "checked": "2026-11-20",
+   "fetched": "2026-11-20"
+  }
  },
  "titanium-court": {
   "steam": 2364580,
